@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import ChessBoard from './ChessBoard';
 import { Chess } from 'chess.js';
 
 const HumanVsHumanGame = () => {
