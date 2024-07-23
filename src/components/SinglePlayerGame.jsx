@@ -17,3 +17,5 @@ const SinglePlayerGame = () => {
         </div>
     );
 };
+
+export default SinglePlayerGame;
