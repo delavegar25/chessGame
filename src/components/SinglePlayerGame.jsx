@@ -12,6 +12,7 @@ const SinglePlayerGame = () => {
     };
     return (
         <div>
+            <h1>Single Player Mode</h1>
         <ChessBoard game={game} onMove={handleMove} />
         </div>
     );
