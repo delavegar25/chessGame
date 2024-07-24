@@ -75,7 +75,7 @@ const LandingPage = () => {
            {/* content here */}
         </div>
            <div className='flex justify-center items-center mt-8'>
-            <img src='../assets/Chess image.jpg'
+            <img src="../assets/Pawn.jpg"
              alt="Chess image"
              className='max-w-full h-auto rounded-md shadow-lg'
              />
