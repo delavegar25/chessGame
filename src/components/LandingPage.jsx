@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-
+import PawnImage from '../assets/Chess image.jpg';
 
 const LandingPage = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -75,7 +75,7 @@ const LandingPage = () => {
            {/* content here */}
         </div>
            <div className='flex justify-center items-center mt-8'>
-            <img src="../assets/Pawn.jpg"
+            <img src={PawnImage}
              alt="Chess image"
              className='max-w-full h-auto rounded-md shadow-lg'
              />
