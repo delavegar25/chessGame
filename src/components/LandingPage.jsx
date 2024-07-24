@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import PawnImage from '../assets/Chess image.jpg';
+import PawnImage from '../assets/Chess game.jpg';
 
 const LandingPage = () => {
     const [isOpen, setIsOpen] = useState(false);
