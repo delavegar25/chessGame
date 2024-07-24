@@ -1,22 +1,17 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import SinglePlayerGame from './components/SinglePlayerGame';
-import HumanVsHumanGame from './components/HumanVsHumanGame';
+import React, { useEffect } from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import LandingPage from './components/LandingPage'
+import SinglePlayerGame from './components/SinglePlayerGame'
+import HumanVsHumanGame from './components/HumanVsHumanGame'
 
-const App = () => {
+function App() {
   return (
     <Router>
-      <div className='p-4'>
-        <h1 className='text-3xl font-bold mb-4'>Online Chess Game</h1>
-        <Switch>
-          <Route path="/single-player">
-           <SinglePlayerGame></SinglePlayerGame>
-          </Route>
-          <Route path="/human-vs-human">
-           <HumanVsHumanGame></HumanVsHumanGame>
-          </Route>
-        </Switch>
-      </div>
+      <Routes>
+        <Route exact path='/' element={<LandingPage />}/><Route/>
+        <Route path='/single' element={<SinglePlayerGame/>}/><Route/>
+        <Route path='/human' element={< HumanVsHumanGame/>}/><Route/>        
+      </Routes>
     </Router>
   );
 };
