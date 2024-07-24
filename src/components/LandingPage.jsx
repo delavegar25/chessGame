@@ -67,7 +67,6 @@ const LandingPage = () => {
                         Advanced 
                     </a>
                     </div>
-
                 </div>
               )}
             </div>
@@ -75,10 +74,15 @@ const LandingPage = () => {
         <div className='mx-auto max-w-0'>
            {/* content here */}
         </div>
+           <div className='flex justify-center items-center mt-8'>
+            <img src='../assets/Chess image.jpg'
+             alt="Chess image"
+             className='max-w-full h-auto rounded-md shadow-lg'
+             />
+        </div>
         </div>
     )
 }
-
 
 
 export default LandingPage;
