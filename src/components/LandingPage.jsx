@@ -4,9 +4,11 @@ import PawnImage from '../assets/Chess game.jpg';
 const LandingPage = () => {
     const [isOpen, setIsOpen] = useState(false);
 
+    // focus on the elements.
+    // using the useRef hook to access the DOM elements.
     const dropdownRef = useRef(null);
     const buttonRef = useRef(null);
-    const itemsRef = useRef([]);
+    const itemsRef = useRef([]); 
 
     const toggleDropdown = () => {
         setIsOpen(!isOpen);
