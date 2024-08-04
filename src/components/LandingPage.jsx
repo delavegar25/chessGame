@@ -172,10 +172,11 @@ const LandingPage = () => {
            {/* content here */}
            <Link to="/signin" ref={signInRef} className='px-6 py-3 
            bg-black 
-           text-white rounded-full text-lg font-semibold
-           shadow-lg transition
-           focus:outline-none focus:ring-2
-           focus:ring-white'
+           text-white rounded-full text-lg
+           font-semibold
+           hover:bg-gray-400
+           focus:outline-none focus:ring
+           focus:ring-gray-300'
            
            tabIndex="0"
            role='button'
@@ -191,11 +192,12 @@ const LandingPage = () => {
            className='px-6
            py-3 bg-gray-400
            text-white rounded-full
-           text-lg font-semibold shadow-lg
-           transition
+           text-lg 
+           font-semibold
+           hover:bg-black
            focus:outline-none
-           focus:ring-2
-           focus:ring-white
+           focus:ring
+           focus:ring-black
            '
            tabIndex="0"
            role='button'
