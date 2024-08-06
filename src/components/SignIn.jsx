@@ -13,6 +13,7 @@ return (
             mb-4 text-center'>
               Chess User 
             </h1>
+        
             <form>
                 <div className='mb-4'>
                  <label className="block 
