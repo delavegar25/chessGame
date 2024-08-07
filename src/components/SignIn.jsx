@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
 import SignInImage from '../assets/Pawn.jpg';
+import { Link } from 'react-router-dom';
 
 const SignIn = () => {
-   
-return (
-    <div className='bg-cover bg-center min-h-screen
+   return (
+    <div 
+    className='bg-cover bg-center min-h-screen
     min-w-screen flex flex-col justify-start
     items-center'
     style={{ backgroundImage: `url(${SignInImage})`}}>
@@ -45,7 +46,6 @@ return (
                     htmlFor='password'>
                        Password 
                     </label>
-
                     <input type="password"
                            id = 'password'
                            className='w-full
@@ -56,6 +56,7 @@ return (
                            focus:border-blue-500'
                            placeholder='Enter your password'
                      />
+                  </div>
                 <button 
                 type='submit'
                 className='w-full
@@ -68,11 +69,19 @@ return (
                 focus:ouyline-none'>
                   Sign In 
                 </button>
-                </div>
+          <div className='mt-4 text-center'>
+              <Link to='/forget-password' 
+              className='text-blue-500'>
+                Forget Password?
+              </Link>
+          </div>                    
             </form>
             </div>
     </div>
-) 
+);
 
-}
+};
 export default SignIn;
+
+
+
