@@ -12,7 +12,7 @@ const SignUp = () => {
         style={{ backgroundImage: `url(${SignUpImage})`}} >
          
          <div className='bg-white p-4 rounded-lg
-         shadow-lg max-w-md w-full mt-5'>
+         shadow-lg max-w-lg w-full mt-5'>
            <h1 className='text-2xl font-bold mb-6
            text-center text-black'>
               Sign Up to Chess Hive  
@@ -28,7 +28,6 @@ const SignUp = () => {
              className='mt-1 px-4
              py-2 border border-gray-300
              rounded-lg relative
-             flex-grow
              w-full focus:outline-none
              focus:ring-2 focus:ring-blue-500'
              placeholder='Name'
@@ -43,7 +42,6 @@ const SignUp = () => {
             className='mt-1 px-4
             py-2 border rounded-lg
             w-full 
-            flex-grow
             focus:outline-none
             focus:ring-2 relative
             focus:ring-blue-500'
