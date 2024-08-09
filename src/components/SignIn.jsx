@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import SignInImage from '../assets/Pawn.jpg';
+import SignInImage from '../assets/white chess.png';
 import { Link } from 'react-router-dom';
 
 const SignIn = () => {
@@ -45,6 +45,13 @@ const SignIn = () => {
                     mb-2'
                     htmlFor='password'>
                        Password 
+                       <Link to='/forget-password'
+                       className='text-gray-500
+                       font-normal
+                       ml-52
+                       underline'>
+                        Forgot?
+                       </Link>
                     </label>
                     <input type="password"
                            id = 'password'
@@ -64,15 +71,19 @@ const SignIn = () => {
                 text-white
                 py-2
                 mt-6
-                rounded-md
+                rounded-2xl
                 hover:bg-blue-600
-                focus:ouyline-none'>
+                focus:outline-none'>
                   Sign In 
                 </button>
-          <div className='mt-4 text-center'>
-              <Link to='/forget-password' 
-              className='text-blue-500'>
-                Forget Password?
+          <div className='mt-4 
+          text-center'> 
+                Don't have an account?  
+              <Link to='/signup'
+              className='m-1 
+              text-blue-900
+              underline'>
+                Sign up
               </Link>
           </div>                    
             </form>

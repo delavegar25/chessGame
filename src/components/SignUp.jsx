@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
-import SignUpImage from '../assets/Pawn.jpg';
+import SignUpImage from '../assets/white chess.png';
+import { Link } from 'react-router-dom';
 
 const SignUp = () => {
 
@@ -14,36 +15,39 @@ const SignUp = () => {
          shadow-lg max-w-md w-full mt-5'>
            <h1 className='text-2xl font-bold mb-6
            text-center text-black'>
-              Create Chess Game Account 
+              Sign Up to Chess Hive  
            </h1>
            <form>
             <div className='mb-4'>
              <label className='block
              text-gray-700 text-md'>
-                First Name 
+                Name 
              </label>
              <input 
              type="text"
              className='mt-1 px-4
              py-2 border border-gray-300
-             rounded-lg
+             rounded-lg relative
+             flex-grow
              w-full focus:outline-none
              focus:ring-2 focus:ring-blue-500'
-             placeholder='First Name'
+             placeholder='Name'
               />
             </div>
             <div className='mb-4'>
             <label className='block text-gray-700'>
-                Last Name 
+                Username  
             </label>
             <input 
             type="text"
             className='mt-1 px-4
             py-2 border rounded-lg
-            w-full focus:outline-none
-            focus:ring-2 
+            w-full 
+            flex-grow
+            focus:outline-none
+            focus:ring-2 relative
             focus:ring-blue-500'
-            placeholder='Last Name'
+            placeholder='Username'
              />
             </div>
             <div className='mb-4'>
@@ -81,7 +85,8 @@ const SignUp = () => {
                   <input 
                   type="password"
                   className='mt-3 px-4
-                  py-2 border rounded-lg w-full
+                  py-2 border rounded-lg 
+                  w-full
                   focus:outline-none
                   focus:ring-2
                   focus:ring-blue-500'
@@ -92,7 +97,7 @@ const SignUp = () => {
                 type='submit'
                 className='w-full bg-blue-500
                 text-white py-2 px-4
-                rounded-lg hover:bg-blue-600
+                rounded-3xl hover:bg-blue-600
                 focus:outline-none
                 focus:ring-2
                 focus:ring-blue-500
@@ -100,6 +105,16 @@ const SignUp = () => {
                 >
                   Create Account 
                 </button>
+                <p className='text-center
+                p-4'>
+                  Already have an account? 
+                  <Link to='/signin' 
+                  className='m-2
+                  text-blue-600
+                  underline'>
+                   Sign In 
+                  </Link>
+                </p>
             </div>
            </form>
          </div>        
