@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import PawnImage from '../assets/Chess game.jpg';
+import PawnImage from '../assets/brown chess image.png';
 import { Link } from 'react-router-dom';
 
 const LandingPage = () => {
@@ -168,45 +168,57 @@ const LandingPage = () => {
               )}
             </div>
         </div>
-        <div className='flex flex-col items-center space-y-4 mt-14'>
-           {/* content here */}
-           <Link to="/signin" ref={signInRef} className='px-6 py-3 
-           bg-black 
-           text-white rounded-full text-lg
-           font-semibold
-           hover:bg-gray-400
-           focus:outline-none focus:ring
-           focus:ring-gray-300'
-           
-           tabIndex="0"
-           role='button'
-           aria-label='Sign In'
-           onKeyDown={handleButtonKeyDown}
-           onFocus={() => setFocusedButton('signin')}
-           >
-              Sign In 
-           </Link>
 
-           <Link to="/signup"
-           ref={signUpRef}
-           className='px-6
-           py-3 bg-gray-400
-           text-white rounded-full
-           text-lg 
-           font-semibold
-           hover:bg-black
-           focus:outline-none
-           focus:ring
-           focus:ring-black
-           '
-           tabIndex="0"
-           role='button'
-           aria-label="Sign Up"
-           onKeyDown={handleButtonKeyDown}
-           onFocus={() => setFocusedButton('signup')}
-           >
+        <div className='flex flex-col 
+        items-center space-y-4 mt-14 border
+        border-gray-300 p-20 rounded-lg bg-white
+        bg-opacity-80'>
+           {/* content here */}
+           <form className="w-full flex
+           flex-col items-center space-y-4">
+            <Link to= '/signin'>
+             <button
+            ref={signInRef}
+            className='px-6 py-3
+            bg-black text-white
+            rounded-full text-lg
+            font-semibold hover:bg-gray-400
+            focus:outline-none focus:ring
+            focus:ring-gray-300'
+            tabIndex='0'
+            role='button'
+            aria-label='Sign In'
+            onKeyDown={handleButtonKeyDown}
+            onFocus={() => 
+                setFocusedButton('signin')
+             }  
+             >
+                Sign In 
+             </button>
+             </Link> 
+
+        <Link to='/signup'>
+          <button
+          ref={signUpRef}
+          className='px-6 py-3 bg-gray-400
+          text-white rounded-full text-lg
+          font-semibold hover:bg-black
+          focus:outline-none
+          focus:ring
+          focus:ring-black'
+          tabIndex='0'
+          role='button'
+          aria-label='Sign Up'
+          onKeyDown={handleButtonKeyDown}
+          onFocus={() => 
+            setFocusedButton('signup')
+          }
+          >
             Sign Up 
-           </Link>
+          </button>
+        </Link>
+
+           </form>
         
         </div>
         </div>
