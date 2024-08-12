@@ -12,7 +12,7 @@ const SignUp = () => {
         style={{ backgroundImage: `url(${SignUpImage})`}} >
          
          <div className='bg-white p-4 rounded-lg
-         shadow-lg max-w-lg w-full mt-5'>
+         shadow-lg max-w-lg m-4 w-full mt-5'>
            <h1 className='text-2xl font-bold mb-6
            text-center text-black'>
               Sign Up to Chess Hive  

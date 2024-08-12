@@ -6,6 +6,7 @@ import HumanVsHumanGame from './components/HumanVsHumanGame'
 import SignIn from './components/SignIn'
 import SignUp from './components/SignUp'
 import ForgetPassword from './components/ForgetPassword'
+import CreateNewPassword from './components/CreateNewPassword'
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path='/signin' element={< SignIn/>}/><Route/>
         <Route path='/signup' element={< SignUp/>}/><Route/>
         <Route path='/forget-password' element={< ForgetPassword/>}/><Route/>
+        <Route path='/reset-password' element={< CreateNewPassword/>}/><Route/>
       </Routes>
     </Router>
   );
