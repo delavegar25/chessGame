@@ -32,7 +32,7 @@ const SignUp = () => {
 
       try {
         const response = await 
-        fetch('http://ypur-backend-url/api/signup',
+        fetch('http://your-backend-url/api/signup',
           {
             method: 'POST',
             headers: {
@@ -53,7 +53,6 @@ const SignUp = () => {
         alert('An error occurred, Please try again.')
       }
     };
-
 
     return (
         <div className='bg-cover bg-center
