@@ -130,7 +130,7 @@ const SignUp = () => {
                type="password"
                name='password'
                value={formData.password}
-               onch
+               onChange={handleChange}
                className='mt-1 px-4
                py-2 border rounded-lg
                w-full focus:outline-none
