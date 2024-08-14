@@ -32,7 +32,7 @@ const SignUp = () => {
 
       try {
         const response = await 
-        fetch('http://your-backend-url/api/signup',
+        fetch('http://ypur-backend-url/api/signup',
           {
             method: 'POST',
             headers: {
@@ -54,6 +54,7 @@ const SignUp = () => {
       }
     };
 
+
     return (
         <div className='bg-cover bg-center
         min-h-screen min-w-screen
@@ -68,7 +69,6 @@ const SignUp = () => {
               Sign Up to Chess Hive  
            </h1>
            <form onSubmit={handleSubmit}>
-            {/ * Form fields */}
             <div className='mb-4'>
              <label className='block
              text-gray-700 text-md'>
@@ -130,7 +130,7 @@ const SignUp = () => {
                type="password"
                name='password'
                value={formData.password}
-               onChange={handleChange}
+               onch
                className='mt-1 px-4
                py-2 border rounded-lg
                w-full focus:outline-none
@@ -145,9 +145,6 @@ const SignUp = () => {
                   </label>
                   <input 
                   type="password"
-                  name='password'
-                  value={formData.confirmPassword}
-                  onChange={handleChange}
                   className='mt-3 px-4
                   py-2 border rounded-lg 
                   w-full
