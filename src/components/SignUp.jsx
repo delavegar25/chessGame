@@ -1,8 +1,59 @@
 import React, { useState, useEffect, useRef } from 'react';
 import SignUpImage from '../assets/white chess.png';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const SignUp = () => {
+    const [formData, setFormData] = useState(
+      {
+        name: '',
+        username: '',
+        email: '',
+        password: '',
+        confirmPassword: '', 
+      }
+    ); 
+
+    const navigate = useNavigate();
+
+    const handleChange = (e) => {
+      setFormData({
+        ...formData,
+        [e.target.name]: e.target.value,
+      });
+    };
+    
+    const handleSubmit = async (e) => {
+      e.preventDefault();
+
+      if (formData.password !== formData.confirmPassword) {
+        alert('Invalid Credentials');
+        return;
+      }
+
+      try {
+        const response = await 
+        fetch('http://ypur-backend-url/api/signup',
+          {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData),
+          });
+
+          if (response.ok) {
+            alert('Account created! Please check your email for OTP.');
+            navigate('/otp-verification');
+          } else {
+            const errorData = await response.json();
+            alert(`Error: ${errorData.message}`);
+          }
+      } catch (error) {
+        console.error('Invalid account:', error);
+        alert('An error occurred, Please try again.')
+      }
+    };
+
 
     return (
         <div className='bg-cover bg-center
@@ -17,7 +68,8 @@ const SignUp = () => {
            text-center text-black'>
               Sign Up to Chess Hive  
            </h1>
-           <form>
+           <form onSubmit={handleSubmit}>
+            {/ * Form fields */}
             <div className='mb-4'>
              <label className='block
              text-gray-700 text-md'>
@@ -25,6 +77,9 @@ const SignUp = () => {
              </label>
              <input 
              type="text"
+             name='name'
+             value={formData.name}
+             onChange={handleChange}
              className='mt-1 px-4
              py-2 border border-gray-300
              rounded-lg relative
@@ -39,6 +94,9 @@ const SignUp = () => {
             </label>
             <input 
             type="text"
+            name='username'
+            value={formData.username}
+            onChange={handleChange}
             className='mt-1 px-4
             py-2 border rounded-lg
             w-full 
@@ -54,6 +112,9 @@ const SignUp = () => {
                 </label>
                 <input 
                 type="email"
+                name='email'
+                value={formData.email}
+                onChange={handleChange}
                 className='mt-1 px-4
                 py-2 border rounded-lg
                 w-full focus:outline-none
@@ -68,6 +129,9 @@ const SignUp = () => {
                </label>
                <input 
                type="password"
+               name='password'
+               value={formData.password}
+               onChange={handleChange}
                className='mt-1 px-4
                py-2 border rounded-lg
                w-full focus:outline-none
@@ -82,6 +146,9 @@ const SignUp = () => {
                   </label>
                   <input 
                   type="password"
+                  name='password'
+                  value={formData.confirmPassword}
+                  onChange={handleChange}
                   className='mt-3 px-4
                   py-2 border rounded-lg 
                   w-full
