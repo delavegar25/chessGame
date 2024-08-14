@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import SignUpImage from '../assets/white chess.png';
 import { Link, useNavigate } from 'react-router-dom';
+import  ExitIcon from '../assets/cross redirect.png';
 
 const SignUp = () => {
     const [formData, setFormData] = useState(
@@ -57,7 +58,7 @@ const SignUp = () => {
     const handleExit = () => {
       navigate('/');
     };
-
+ 
 
     return (
         <div className='bg-cover bg-center
@@ -66,6 +67,15 @@ const SignUp = () => {
         justify-start items-center'
         style={{ backgroundImage: `url(${SignUpImage})`}} >
          
+        <img src={ExitIcon}
+         alt="Exit" 
+         className='absolute top-4 
+         ml-96 left-10
+         m-5
+         w-8 h-8 cursor-pointer'
+         onClick={handleExit}
+         /> 
+
          <div className='bg-white p-4 rounded-lg
          shadow-lg max-w-lg m-4 w-full mt-5'>
 

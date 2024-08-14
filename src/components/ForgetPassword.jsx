@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import ForgetPasswordImage from '../assets/white chess.png';
+import ExitIcon from '../assets/cross redirect.png';
+import { useNavigate } from 'react-router-dom';
+
 
 const ForgetPassword = () => {
     const [email, setEmail] = useState('');
@@ -7,8 +10,14 @@ const ForgetPassword = () => {
         e.preventDefault();
         // API call
         console.log('Email submitted: email')
-    };
+      };
+    
+      const navigate = useNavigate();
 
+      const handleExit = () => {
+        navigate('/');
+      };
+  
 
     return (
         <div
@@ -21,7 +30,16 @@ const ForgetPassword = () => {
       className='bg-gray-400 
       mt-40 p-8 
       rounded-lg 
-      shadow-lg w-96'> 
+      shadow-lg w-96'>
+
+        <img src={ExitIcon} 
+        alt="Exit" 
+        className='
+        w-8 h-8
+        cursor-pointer'
+        onClick={handleExit}
+        />
+
             <h1 className='text-2xl font-bold 
             mb-4 text-center'>
               Forget Password 
