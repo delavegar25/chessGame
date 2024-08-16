@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 
 const LandingPage = () => {
 
-
     return (
         <div className='bg-cover bg-center min-h-screen min-w-screen flex flex-col justify-start items-center' 
         style={{ backgroundImage: `url(${PawnImage})`}}>
@@ -25,8 +24,18 @@ const LandingPage = () => {
                      Login  
                    </button>
                 </Link>
-            </div>
-        
+            </div>        
+        </div>
+
+        <div className='flex-grow flex items-center
+        justify-center'>
+            <h2 className='text-white
+            text-4xl font-bold animate-fade'>
+                "Welcome to Chess Hive <br />
+                Home of Chess Players" 
+
+            </h2>
+
         </div>
         </div>
     )

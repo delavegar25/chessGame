@@ -10,7 +10,17 @@ export default {
       'md': '768px',
       'lg': '1024px',
       'xl': '1280px',
-    extend: {},
+    extend: {
+      keyframes: {
+        fadeInOut: {
+          '0%, 100%': { opacity: 0},
+          '50%': { opacity: 1},
+        },
+      },
+      animation: {
+        fade: 'fadeInOut 4s ease-in-out infinite',
+      },
+    },
   }
   },
 
