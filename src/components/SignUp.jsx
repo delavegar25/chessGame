@@ -72,7 +72,7 @@ const SignUp = () => {
          <div className='relative top-20
          right-56'>
         <img src={ExitIcon}
-         alt="Exit" 
+         alt="" 
          className=' 
          w-8 h-8 cursor-pointer'
          onClick={handleExit}

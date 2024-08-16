@@ -21,7 +21,7 @@ const SignIn = () => {
             <div className='relative top-10
             left-72'>
             <img src={ExitIcon}
-            alt="Exit"
+            alt=""
             className='
             w-8 h-8 cursor-pointer'
             onClick={handleExit}
