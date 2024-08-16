@@ -10,6 +10,7 @@ export default {
       'md': '768px',
       'lg': '1024px',
       'xl': '1280px',
+    },
     extend: {
       keyframes: {
         fadeInOut: {
@@ -17,11 +18,12 @@ export default {
           '50%': { opacity: 1},
         },
       },
+
       animation: {
-        fade: 'fadeInOut 4s ease-in-out infinite',
+        fade: 
+        'fadeInOut 4s ease-in-out infinite',
       },
     },
-  }
   },
 
   plugins: [],

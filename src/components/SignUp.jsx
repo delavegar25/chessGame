@@ -32,6 +32,7 @@ const SignUp = () => {
         return;
       }
 
+      {/* calling the API */}
       try {
         const response = await 
         fetch('http://ypur-backend-url/api/signup',
