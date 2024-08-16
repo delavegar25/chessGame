@@ -17,15 +17,16 @@ const SignIn = () => {
     items-center'
     style={{ backgroundImage: `url(${SignInImage})`}}>
         <div className='bg-gray-400 mt-40 p-8 rounded-lg shadow-lg w-96'> 
+            
+            <div className='relative top-10
+            left-72'>
             <img src={ExitIcon}
             alt="Exit"
-            className='absolute top-22
-            ml-72 left-56
-            m-1
+            className='
             w-8 h-8 cursor-pointer'
             onClick={handleExit}
             />
-
+            </div>
             <h1 className='text-2xl font-bold 
             mb-4 text-center'>
               Chess User 

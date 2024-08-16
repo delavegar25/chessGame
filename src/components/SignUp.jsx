@@ -27,7 +27,8 @@ const SignUp = () => {
       e.preventDefault();
 
       if (formData.password !== formData.confirmPassword) {
-        alert('Invalid Credentials');
+        alert('Invalid Credentials',
+        );
         return;
       }
 
@@ -67,19 +68,21 @@ const SignUp = () => {
         justify-start items-center'
         style={{ backgroundImage: `url(${SignUpImage})`}} >
          
+         <div className='relative top-20
+         right-56'>
         <img src={ExitIcon}
          alt="Exit" 
-         className='absolute top-4 
-         ml-96 left-10
-         m-5
+         className=' 
          w-8 h-8 cursor-pointer'
          onClick={handleExit}
          /> 
+        </div>
 
          <div className='bg-white p-4 rounded-lg
          shadow-lg max-w-lg m-4 w-full mt-5'>
 
-           <h1 className='text-2xl font-bold mb-6
+           <h1 className='text-2xl font-bold mb-6 
+           b-5
            text-center text-black'>
               Sign Up to Chess Hive  
            </h1>
