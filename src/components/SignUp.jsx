@@ -94,8 +94,8 @@ const SignUp = () => {
         justify-start items-center'
         style={{ backgroundImage: `url(${SignUpImage})`}} >
          
-         <div className='relative top-20
-         right-56'>
+         <div className='relative top-16
+         left-56'>
         <img src={ExitIcon}
          alt="" 
          className=' 
