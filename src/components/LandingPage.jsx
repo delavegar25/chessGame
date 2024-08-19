@@ -33,9 +33,7 @@ const LandingPage = () => {
             text-4xl font-bold animate-fade'>
                 "Welcome to Chess Hive <br />
                 Home of Chess Players" 
-
             </h2>
-
         </div>
         </div>
     )

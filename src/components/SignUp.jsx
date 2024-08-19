@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import SignUpImage from '../assets/white chess.png';
 import { Link, useNavigate } from 'react-router-dom';
 import  ExitIcon from '../assets/cross redirect.png';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 const SignUp = () => {
     const [formData, setFormData] = useState(
@@ -14,6 +15,11 @@ const SignUp = () => {
       }
     ); 
 
+    const [showPassword, setShowPasssword] = useState(false);
+    const [passwordStrength, setPasswordStrength] = useState('');
+    const [passwordMatch, setPasswordMatch] = useState(null);
+
+
     const navigate = useNavigate();
 
     const handleChange = (e) => {
@@ -21,16 +27,35 @@ const SignUp = () => {
         ...formData,
         [e.target.name]: e.target.value,
       });
+     
+      if (e.target.name === 'password') {
+        validatePasswordStrength(e.target.value);
+      }
+
+      if (e.target.name === 'confirmPassword'){
+        setPasswordMatch(e.target.value === formData.password);
+      }
     };
+
+    const validatePasswordStrength = (password) => {
+      const strengthRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$&@?])[A-Za-z\d$&@?]{8,}$/;
+
+      if (strengthRegex.test(password)) {
+        setPasswordStrength('strong');
+      } else {
+        setPasswordStrength('weak');
+      };
+
+    }
     
     const handleSubmit = async (e) => {
       e.preventDefault();
 
-      if (formData.password !== formData.confirmPassword) {
-        alert('Invalid Credentials',
-        );
+      if (!passwordMatch) {
+        alert('Invalid password');
         return;
       }
+
 
       {/* calling the API */}
       try {
@@ -145,33 +170,72 @@ const SignUp = () => {
                text-gray-700 mt-2'>
                 Password 
                </label>
-               <input 
-               type="password"
-               name='password'
-               value={formData.password}
-               onChange={handleChange}
-               className='mt-1 px-4
-               py-2 border rounded-lg
-               w-full focus:outline-none
-               focus:ring-2
-               focus:ring-blue-500'
-               placeholder='Password'
+
+               <div className='relative'>
+                <input type={showPassword ? 'text':
+                'password'} 
+                name='password'
+                value={formData.password}
+                onChange={handleChange}
+                className={`mt-1 px-4 py-2 border rounded-lg w-full focus:outline-none focus:ring-2 ${passwordStrength === 'strong' ? 'focus:ring-green-500' : 'focus:ring-red-500'}`}
+                placeholder='Password'
                 />
+                <div className='absolute inset-y-0 right-0
+                pr-3 flex items-center'>
+
+                  <button type='button'
+                  onClick={() => setShowPasssword(!showPassword)}
+                  className='focus:outline-none'>
+                  {showPassword ? <FaEyeSlash /> : < FaEye/>}
+                  </button>              
+                </div>
+               </div>
+               <p className={`text-sm ${passwordStrength === 'strong' ? 'text-green=500' : 'text-red-500'}`}>
+                {
+                  passwordStrength === 'strong' ? 'Strong password': 'Password must include uppercase, lowercase, number, and special character'
+                }
+               </p>
+              
+              
                 <div className='mb-6'>
                   <label className='block
                   text-gray-700 mt-4'>
                     Confirm Password 
                   </label>
+                  <div className='relative'>
                   <input 
-                  type="password"
-                  className='mt-3 px-4
+                  type={showPassword ? 'text': 'password'}
+                  name='confirmPassword'
+                  value={formData.confirmPassword}
+                  onChange={handleChange}
+                  className={`mt-3 px-4
                   py-2 border rounded-lg 
                   w-full
                   focus:outline-none
                   focus:ring-2
-                  focus:ring-blue-500'
+                  ${passwordMatch === false ? 'focus:ring-red-500' : passwordMatch === true ? 'focus:ring-green-500' : 'focus:ring-blue-500'}`}
                   placeholder='Confirm Password' 
                   />
+                  <div className='absolute inset-y-0 right-0 pr-3
+                  flex items-center'> 
+                  <button type='button'
+                    onClick={() => setShowPasssword(!showPassword)}
+                    className='focus:outline-none'>
+                      {showPassword ? <FaEyeSlash /> : <FaEye /> }
+                  </button>
+                  </div>
+                </div>
+                {passwordMatch === false && (
+                  <p
+                  className='text-sm text-red-500'>
+                  Invalid password 
+                  </p>
+                )}
+                {passwordMatch === true && ( <p 
+                  className='text-sm text-green-500'>
+                    Password match
+                  </p>
+                )}
                 </div>
                 <button 
                 type='submit'
