@@ -104,8 +104,8 @@ const SignUp = () => {
          /> 
         </div>
 
-         <div className='bg-white p-4 rounded-lg
-         shadow-lg max-w-lg m-4 w-full mt-5'>
+         <div className='bg-white p-4 rounded-md
+         shadow-md max-w-lg m-4 w-full mt-5'>
 
            <h1 className='text-2xl font-bold mb-6 
            b-5
