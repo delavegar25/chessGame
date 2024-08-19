@@ -95,7 +95,7 @@ const SignUp = () => {
         style={{ backgroundImage: `url(${SignUpImage})`}} >
          
          <div className='relative top-16
-         left-56'>
+         left-48'>
         <img src={ExitIcon}
          alt="" 
          className=' 
