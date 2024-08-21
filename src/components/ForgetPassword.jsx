@@ -40,12 +40,14 @@ const ForgetPassword = () => {
         onClick={handleExit}
         />
 
-            <h1 className='text-2xl font-bold 
+            <h1 style={{ fontFamily: 'Roboto Flex, sans-serif' }} 
+            className='text-2xl font-bold 
             mb-4 text-center'>
               Forget Password 
             </h1>
             <form onSubmit={handleSubmit}>
-               <div className='mb-4'>
+               <div style={{ fontFamily: 'Roboto Flex sans-serif' }}
+                className='mb-4'>
                  <label className='block
                  text-gray-700 text-sm
                  font-bold mb-2'
@@ -68,7 +70,8 @@ const ForgetPassword = () => {
                  required
                  />
                </div>
-               <button type='submit'
+               <button style={{ fontFamily: 'Roboto Flex sans-serif' }}
+                type='submit'
                className='w-full bg-blue-500
                text-white py-2 rounded-md
                hover:bg-blue-600

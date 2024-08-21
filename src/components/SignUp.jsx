@@ -113,13 +113,15 @@ const SignUp = () => {
             </div>
         )}
 
-           <h1 className='text-2xl font-bold mb-6 
+           <h1 style={{ fontFamily: 'Roboto Flex sans-serif' }} 
+           className='text-2xl font-bold mb-6 
            b-5
            text-center text-black'>
               Sign Up to Chess Hive  
            </h1>
            <form onSubmit={handleSubmit}>
-            <div className='mb-4'>
+            <div style={{ fontFamily: 'Roboto Flex sans-serif' }} 
+            className='mb-4'>
              <label className='block
              text-gray-700 text-md'>
                 Name 
@@ -137,7 +139,8 @@ const SignUp = () => {
              placeholder='Name'
               />
             </div>
-            <div className='mb-4'>
+            <div style={{ fontFamily: 'Roboto Flex sans-serif' }} 
+             className='mb-4'>
             <label className='block text-gray-700'>
                 Username  
             </label>
@@ -155,7 +158,8 @@ const SignUp = () => {
             placeholder='Username'
              />
             </div>
-            <div className='mb-4'>
+            <div style={{ fontFamily: 'Roboto Flex sans-serif' }} 
+            className='mb-4'>
                 <label className='block text-gray-700'>
                     Email 
                 </label>
@@ -171,7 +175,8 @@ const SignUp = () => {
                 placeholder='Email'
                  />
             </div>
-            <div className='mb-6'>
+            <div style={{ fontFamily: 'Roboto Flex sans-serif'}} 
+            className='mb-6'>
                <label className='block 
                text-gray-700 mt-2'>
                 Password 

@@ -11,10 +11,12 @@ const LandingPage = () => {
         aria-label='Chess Hive Landing Page'>
 
             <div className='w-full p-4 bg-opacity-50 justify-between items-center'>   
-            <h1 className='text-left text-xl font-bold text-black'>
+            <h1 style= {{ fontFamily: 'Roboto Flex, sans-serif' }}
+            className='text-left text-xl font-bold text-black'>
                 CHESS HIVE  
                 </h1>
-            <div className='absolute 
+            <div style={{ fontFamily: 'Roboto Flex sans-serif'}} 
+            className='absolute 
             right-60 top-4'>
                 <Link to='/signin' aria-label='Sign in to Chess Hive'>
                    <button className='bg-gray-600
@@ -31,7 +33,8 @@ const LandingPage = () => {
             </div>        
         </div>
 
-        <div className='flex-grow flex items-center
+        <div style={{ fontFamily: 'Roboto Flex, sans-serif' }} 
+        className='flex-grow flex items-center
         justify-center'>
             <h2 className='text-white
             text-4xl font-bold animate-fade' aria-live='polite'>

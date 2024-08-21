@@ -35,14 +35,16 @@ const SignIn = () => {
             tabIndex='0' // Makes the Icon focusable with a keyboard
             />
             </div>
-            <h1 id='signin-title' className='text-2xl font-bold 
+            <h1 style={{ fontFamily: 'Roboto Flex, sans-serif' }} 
+            id='signin-title' className='text-2xl font-bold 
             mb-4 text-center'>
               Chess User 
             </h1>
         
             <form>
                 <div className='mb-4'>
-                 <label className="block 
+                 <label style={{ fontFamily: 'Roboto Flex, sans-serif' }}
+                  className="block 
                  text-gray-700
                  text-sm 
                  font-bold
@@ -63,7 +65,8 @@ const SignIn = () => {
                  />
                 </div>
 
-                <div className='mb-4 relative'>
+                <div style={{ fontFamily: 'Roboto Flex, sans-serif'}} 
+                className='mb-4 relative'>
                     <label className='block 
                     text-gray-700
                     text-sm
@@ -102,6 +105,7 @@ const SignIn = () => {
                      </button>
                   </div>
                 <button 
+                style={{ fontFamily: 'Roboto Flex, sans-serif' }}
                 type='submit'
                 className='w-full
                 bg-blue-500
@@ -114,7 +118,8 @@ const SignIn = () => {
                 aria-label='Sign In'>
                   Sign In 
                 </button>
-          <div className='mt-4 
+          <div style={{ fontFamily: 'Roboto Flex, sans-serif' }}  
+          className='mt-4 
           text-center'> 
                 Don't have an account?  
               <Link to='/signup'
