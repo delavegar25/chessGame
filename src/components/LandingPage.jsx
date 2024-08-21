@@ -11,7 +11,7 @@ const LandingPage = () => {
         aria-label='Chess Hive Landing Page'>
 
             <div className='w-full p-4 bg-opacity-50 justify-between items-center'>   
-            <h1 style= {{ fontFamily: 'Roboto Flex, sans-serif' }}
+            <h1 style= {{ fontFamily: 'Roboto Flex sans-serif' }}
             className='text-left text-xl font-bold text-black'>
                 CHESS HIVE  
                 </h1>

@@ -35,15 +35,16 @@ const SignIn = () => {
             tabIndex='0' // Makes the Icon focusable with a keyboard
             />
             </div>
-            <h1 style={{ fontFamily: 'Roboto Flex, sans-serif' }} 
+            <h1 style={{ fontFamily: 'Roboto Flex sans-serif' }} 
             id='signin-title' className='text-2xl font-bold 
             mb-4 text-center'>
               Chess User 
             </h1>
         
             <form>
-                <div className='mb-4'>
-                 <label style={{ fontFamily: 'Roboto Flex, sans-serif' }}
+                <div style={{ fontFamily: 'Roboto Flex sans-serif' }} 
+                className='mb-4'>
+                 <label
                   className="block 
                  text-gray-700
                  text-sm 
@@ -65,24 +66,27 @@ const SignIn = () => {
                  />
                 </div>
 
-                <div style={{ fontFamily: 'Roboto Flex, sans-serif'}} 
+                <div 
                 className='mb-4 relative'>
                     <label className='block 
                     text-gray-700
                     text-sm
                     font-bold
                     mb-2'
-                    htmlFor='password'>
+                    htmlFor='password'
+                    style={{ fontFamily: 'Roboto Flex sans-serif'}}>
                        Password 
                        <Link to='/forget-password'
                        className='text-gray-500
                        font-normal
                        ml-52
-                       underline'>
+                       underline'
+                       style={{ fontFamily: 'Roboto Flex sans-serif'}}>
                         Forgot?
                        </Link>
                     </label>
-                    <input type={showPassword ? 'text': 'password'}
+                    <input style={{ fontFamily: 'Roboto Flex sans-serif '}} 
+                    type={showPassword ? 'text': 'password'}
                            id = 'password'
                            className='w-full
                            px-3 py-2 border
@@ -105,7 +109,6 @@ const SignIn = () => {
                      </button>
                   </div>
                 <button 
-                style={{ fontFamily: 'Roboto Flex, sans-serif' }}
                 type='submit'
                 className='w-full
                 bg-blue-500
@@ -115,17 +118,20 @@ const SignIn = () => {
                 rounded-lg
                 hover:bg-blue-600
                 focus:outline-none'
-                aria-label='Sign In'>
+                aria-label='Sign In'
+                style={{ fontFamily: 'Roboto Flex sans-serif'}}>
                   Sign In 
                 </button>
-          <div style={{ fontFamily: 'Roboto Flex, sans-serif' }}  
+          <div   
           className='mt-4 
-          text-center'> 
+          text-center'
+          style={{ fontFamily: 'Roboto Flex sans-serif' }}> 
                 Don't have an account?  
               <Link to='/signup'
               className='m-1 
               text-blue-900
-              underline'>
+              underline'
+              style={{ fontFamily: 'Roboto Flex sans-serif' }}>
                 Sign up
               </Link>
           </div>                    

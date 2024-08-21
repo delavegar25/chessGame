@@ -40,7 +40,7 @@ const ForgetPassword = () => {
         onClick={handleExit}
         />
 
-            <h1 style={{ fontFamily: 'Roboto Flex, sans-serif' }} 
+            <h1 style={{ fontFamily: 'Roboto Flex sans-serif' }} 
             className='text-2xl font-bold 
             mb-4 text-center'>
               Forget Password 
