@@ -33,10 +33,11 @@ const LandingPage = () => {
             </div>        
         </div>
 
-        <div style={{ fontFamily: 'Roboto Flex, sans-serif' }} 
+        <div 
         className='flex-grow flex items-center
         justify-center'>
-            <h2 className='text-white
+            <h2 style={{ fontFamily: 'Roboto Flex sans-serif'}}
+            className='text-white
             text-4xl font-bold animate-fade' aria-live='polite'>
                 "Welcome to Chess Hive <br />
                 Home of Chess Players" 
