@@ -94,26 +94,24 @@ const SignUp = () => {
         justify-start items-center'
         style={{ backgroundImage: `url(${SignUpImage})`}} >
          
-         <div className='relative top-16
-         left-48'>
+        
+
+       <div className='bg-gray-400 p-4 rounded-lg
+         shadow-lg max-w-lg m-4 w-full mt-5 relative'>
+         
         <img src={ExitIcon}
          alt="" 
-         className=' 
+         className='absolute top-2 right-2 
          w-8 h-8 cursor-pointer'
          onClick={handleExit}
          /> 
-        </div>
-
-
+        
         {showAlert && 
         ( <div 
           className="absolute  mr-4 p-2 bg-red-500 text-white text-sm rounded-lg mt-2 z-50 animate-slide-in">
             Invalid credentials 
             </div>
         )}
-
-       <div className='bg-white p-4 rounded-lg
-         shadow-lg max-w-lg m-4 w-full mt-5 relative'>
 
            <h1 className='text-2xl font-bold mb-6 
            b-5
