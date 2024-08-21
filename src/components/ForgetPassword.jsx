@@ -33,7 +33,7 @@ const ForgetPassword = () => {
       shadow-lg w-96'>
 
         <img src={ExitIcon} 
-        alt="" 
+        alt="Exit" 
         className='
         w-8 h-8
         cursor-pointer'

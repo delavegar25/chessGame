@@ -100,7 +100,7 @@ const SignUp = () => {
          shadow-lg max-w-lg m-4 w-full mt-5 relative'>
          
         <img src={ExitIcon}
-         alt="" 
+         alt="Exit" 
          className='absolute top-2 right-2 
          w-8 h-8 cursor-pointer'
          onClick={handleExit}
