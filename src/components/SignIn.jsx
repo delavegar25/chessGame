@@ -103,7 +103,7 @@ const SignIn = () => {
                 text-white
                 py-2
                 mt-6
-                rounded-2xl
+                rounded-lg
                 hover:bg-blue-600
                 focus:outline-none'>
                   Sign In 
