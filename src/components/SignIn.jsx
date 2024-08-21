@@ -33,9 +33,10 @@ const SignIn = () => {
             className='
             w-8 h-8 cursor-pointer'
             onClick={handleExit}
+            tabIndex='0' // Makes the Icon focusable with a keyboard
             />
             </div>
-            <h1 className='text-2xl font-bold 
+            <h1 id='signin-title' className='text-2xl font-bold 
             mb-4 text-center'>
               Chess User 
             </h1>
@@ -58,7 +59,8 @@ const SignIn = () => {
                         rounded-md
                         focus:outline=none
                         focus:border-blue-500'
-                        placeholder='Enter your email' 
+                        placeholder='Enter your email'
+                        aria-required='true' //Indicates this field is required 
                  />
                 </div>
 
@@ -87,14 +89,18 @@ const SignIn = () => {
                            focus:outline-none
                            focus:border-blue-500'
                            placeholder='Enter your password'
+                           aria-required='true'
                      />
-                     <div className='absolute inset-y-0 right-0
+                     <button type= 'button'
+                    className='absolute inset-y-0 right-0
                      pr-3 top-6 flex items-center cursor-pointer'
                      
                      onClick={togglePasswordVisibility}
+                     aria-label={showPassword ? 'Hide password' : 'Show password'}
+                     // Accessible Description
                      >
                       {showPassword ? <FaEyeSlash /> : <FaEye />}
-                     </div>
+                     </button>
                   </div>
                 <button 
                 type='submit'
@@ -105,7 +111,8 @@ const SignIn = () => {
                 mt-6
                 rounded-lg
                 hover:bg-blue-600
-                focus:outline-none'>
+                focus:outline-none'
+                aria-label='Sign In'>
                   Sign In 
                 </button>
           <div className='mt-4 
