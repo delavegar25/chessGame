@@ -21,7 +21,7 @@ export default {
 
       animation: {
         fade: 
-        'fadeInOut 4s ease-in-out infinite',
+        'fadeInOut 10s ease-in-out',
       },
     },
   },
