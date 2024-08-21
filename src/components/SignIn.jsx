@@ -25,8 +25,7 @@ const SignIn = () => {
     items-center'
     style={{ backgroundImage: `url(${SignInImage})`}}>
         <div className='bg-gray-400 mt-40 p-8 rounded-lg shadow-lg w-96'> 
-            
-            <div className='relative top-10
+          <div className='relative top-10
             left-72'>
             <img src={ExitIcon}
             alt="Exit"
@@ -92,7 +91,7 @@ const SignIn = () => {
                            aria-required='true'
                      />
                      <button type= 'button'
-                    className='absolute inset-y-0 right-0
+                       className='absolute inset-y-0 right-0
                      pr-3 top-6 flex items-center cursor-pointer'
                      
                      onClick={togglePasswordVisibility}
