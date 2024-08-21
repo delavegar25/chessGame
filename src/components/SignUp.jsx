@@ -15,7 +15,8 @@ const SignUp = () => {
       }
     ); 
 
-    const [showPassword, setShowPasssword] = useState(false);
+    const [showPassword, setShowPassword] = useState(false);
+    const [showConfirmPassword, setShowConfirmPassword] = useState(false);
     const [passwordStrength, setPasswordStrength] = useState(
       {
         uppercase: false,
@@ -215,7 +216,7 @@ const SignUp = () => {
                 pr-3 flex items-center'>
 
                   <button type='button'
-                  onClick={() => setShowPasssword(!showPassword)}
+                  onClick={() => setShowPassword(!showPassword)}
                   className='focus:outline-none'>
                   {showPassword ? <FaEyeSlash /> : < FaEye/>}
                   </button>              
@@ -262,7 +263,7 @@ const SignUp = () => {
                   </label>
                   <div className='relative'>
                   <input 
-                  type={showPassword ? 'text': 'password'}
+                  type={showConfirmPassword ? 'text': 'password'}
                   name='confirmPassword'
                   value={formData.confirmPassword}
                   onChange={handleChange}
@@ -277,9 +278,11 @@ const SignUp = () => {
                   <div className='absolute inset-y-0 right-0 pr-3
                   flex items-center'> 
                   <button type='button'
-                    onClick={() => setShowPasssword(!showPassword)}
-                    className='focus:outline-none'>
-                      {showPassword ? <FaEyeSlash /> : <FaEye /> }
+                    onClick={() => setShowConfirmPassword(!showPassword)}
+                    className='focus:outline-none'
+                    aria-label={showConfirmPassword ? 'Hide password' : 'Show password'}
+                    >
+                      {showConfirmPassword ? <FaEyeSlash /> : <FaEye /> }
                   </button>
                   </div>
                 </div>

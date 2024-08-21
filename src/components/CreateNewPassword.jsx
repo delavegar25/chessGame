@@ -1,12 +1,17 @@
 import React, { useState } from 'react';
 import CreatePasswordImage from '../assets/white chess.png';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 const CreateNewPassword = () => {
     const [password, setPassword] = 
     useState('');
     const [confirmPassword, setConfirmPassword] =
     useState('');
+    const [showPassword, setShowPasssword] = useState(false);
 
+    const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+
+    
     const handleSubmit = (e) => {
         e.preventDefault();
         
@@ -19,15 +24,25 @@ const CreateNewPassword = () => {
         }
     };
 
+    const togglePasswordVisibility = () => {
+      setShowPasssword(!showPassword);
+    };
+
+    const toggleConfirmPasswordVisibility = () => {
+      setShowConfirmPassword(!showConfirmPassword);
+    };
+
     return (
-       <div className='bg-cover bg-center
+       <div 
+        className='bg-cover bg-center
        min-h-screen min-w-screen flex
        flex-col justify-start items-center'
        style={{ backgroundImage: `url(${
         CreatePasswordImage
        })`}}
        >
-        <div className='bg-gray-400
+        <div style={{ fontFamily: 'Roboto Flex sans-serif'}}
+         className='bg-gray-400
         mt-40 p-8 rounded-lg w-96'>
             <h1 className='text-2xl
             font-bold mb-4 text-center'>
@@ -35,7 +50,7 @@ const CreateNewPassword = () => {
             </h1>
             <form onSubmit={handleSubmit}>
               {/* New Password */}
-              <div className='mb-4'>
+              <div className='mb-4 relative'>
                <label className='block 
                text-gray-700
                text-sm font-bold
@@ -43,7 +58,7 @@ const CreateNewPassword = () => {
                  New Password 
                </label>
                <input 
-               type="password" 
+               type={showPassword ? 'text' : 'password'} 
                id='password'
                value={password}
                onChange={(e) => 
@@ -55,11 +70,19 @@ const CreateNewPassword = () => {
                focus:border-blue-500'
                placeholder='Enter your new password'
                required
+               aria-required='true'
                />
+               <button type='button'
+               className='absolute inset-y-0 right-0
+               pr-3 top-6 flex items-center cursor-pointer'
+               onClick={togglePasswordVisibility}
+               aria-label={showPassword ? 'Hide password' : 'Show password'}>
+                {showPassword ? <FaEyeSlash /> : <FaEye />}
+               </button>
               </div>
 
             {/* Confirm Password*/}
-              <div className='mb-6'>
+              <div className='mb-6 relative'>
                 <label 
                 className='block text-gray-700
                 text-sm font-bold mb-2'
@@ -67,7 +90,7 @@ const CreateNewPassword = () => {
                    Confirm Password    
                  </label>
                  <input 
-                 type="password" 
+                 type={showConfirmPassword ? 'text': 'password'} 
                  id='confirmPassword'
                  value={confirmPassword}
                  onChange={(e) => 
@@ -81,6 +104,14 @@ const CreateNewPassword = () => {
                  placeholder='Confirm your new password'
                  required
                  />
+                 <button type='button'
+                  className='absolute inset-y-0 right-0 pr-3
+                  top-6 items-center cursor-pointer'
+                  onClick={toggleConfirmPasswordVisibility}
+                  aria-label={showConfirmPassword ? 'Hide password': 'Show password'}
+                 >
+                  {showConfirmPassword ? <FaEyeSlash /> : <FaEye/>}
+                 </button>
               </div>
 
             {/* Submit button */}
