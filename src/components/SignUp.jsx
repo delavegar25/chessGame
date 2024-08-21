@@ -16,37 +16,56 @@ const SignUp = () => {
     ); 
 
     const [showPassword, setShowPasssword] = useState(false);
-    const [passwordStrength, setPasswordStrength] = useState('');
+    const [passwordStrength, setPasswordStrength] = useState(
+      {
+        uppercase: false,
+        lowercase: false,
+        number: false,
+        special: false,
+      }
+    );
     const [passwordMatch, setPasswordMatch] = useState(null);
     const [showAlert, setShowAlert] = useState(false);
 
     const navigate = useNavigate();
 
     const handleChange = (e) => {
+      const { name, value } = e.target;
+
       setFormData({
         ...formData,
-        [e.target.name]: e.target.value,
+        [name]: value,
       });
      
-      if (e.target.name === 'password') {
-        validatePasswordStrength(e.target.value);
+      if (name === 'password') {
+        validatePasswordStrength(value);
       }
 
-      if (e.target.name === 'confirmPassword'){
-        setPasswordMatch(e.target.value === formData.password);
+      if (name === 'confirmPassword'){
+        // only validate password match if both fields are filled
+        if(formData.password && value){
+        setPasswordMatch(value === formData.password);
+      } else {
+        setPasswordMatch(null); // Reset match state if fields are empty
       }
+    }
     };
 
-    const validatePasswordStrength = (password) => {
-      const strengthRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$&@?])[A-Za-z\d$&@?]{8,}$/;
+    const validatePasswordStrength = (password) => { 
+      const uppercase = /[A-Z]/.test(password);
+      const lowercase = /[a-z]/.test(password);
+      const number = /\d/.test(password);
+      const special = /[$&@?]/.test(password);
 
-      if (strengthRegex.test(password)) {
-        setPasswordStrength('strong');
-      } else {
-        setPasswordStrength('weak');
-      };
-
+      setPasswordStrength({
+        uppercase,
+        lowercase,
+        number,
+        special,
+      });
     }
+
+    
     
     const handleSubmit = async (e) => {
       e.preventDefault();
@@ -188,7 +207,8 @@ const SignUp = () => {
                 name='password'
                 value={formData.password}
                 onChange={handleChange}
-                className={`mt-1 px-4 py-2 border rounded-lg w-full focus:outline-none focus:ring-2 ${passwordStrength === 'strong' ? 'focus:ring-green-500' : 'focus:ring-red-500'}`}
+                className={`mt-1 px-4 py-2 border rounded-lg w-full focus:outline-none focus:ring-2 
+                  ${passwordStrength.uppercase && passwordStrength.lowercase && passwordStrength.number && passwordStrength.special ? 'focus:ring-green-500' : 'focus:ring-red-500'}`}               
                 placeholder='Password'
                 />
                 <div className='absolute inset-y-0 right-0
@@ -201,12 +221,39 @@ const SignUp = () => {
                   </button>              
                 </div>
                </div>
-               <p className={`text-sm ${passwordStrength === 'strong' ? 'text-green=500' : 'text-red-500'}`}>
-                {
-                  passwordStrength === 'strong' ? 'Strong password': 'Password must include uppercase, lowercase, number, and special character'
-                }
-               </p>
-              
+               <div className='mt-2 flex gap-4'>
+                <div className={`flex items-center $ 
+                  {passwordStrength.uppercase ? 'text-green-500': 'text-red-500' }`}>
+                <input type="radio"
+                checked={passwordStrength.uppercase} 
+                readOnly className='mr-2'/>
+                <span className='text-black'>Uppercase letter</span>
+              </div>
+              <div className={`flex items-center 
+                ${passwordStrength.lowercase ? 'text-green-500': 'text-red-500'}`}>
+                <input type="radio"
+                checked={passwordStrength.lowercase} 
+                readOnly className='mr-2'
+                />
+                <span className='text-black'>Lowercase letter</span>
+              </div>
+              <div className={`flex items-center 
+                ${passwordStrength.number ? 'text-green-500': 'text-red-500'}`}>
+                  <input type="radio"
+                  checked={passwordStrength.number}
+                  readOnly className='mr-2' 
+                  />
+                  <span className='text-black'>Number</span>
+              </div>
+              <div className={`flex items-center 
+                ${passwordStrength.special ? 'text-green-500' : 'text-red-500'}`}>
+                  <input type="radio" 
+                  checked={passwordStrength.special}
+                  readOnly className='mr-2'
+                  />
+                <span className='text-black'>Special character</span>
+              </div>
+               </div>
               
                 <div className='mb-6'>
                   <label className='block
