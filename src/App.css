@@ -18,6 +18,15 @@
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+h1, h2 {
+  font-family: 'Flex', sans-serif;
+}
+
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);
