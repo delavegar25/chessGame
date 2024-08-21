@@ -21,7 +21,7 @@ const LandingPage = () => {
                    left-56
                    py-2
                    px-4 rounded-lg'>
-                     Login  
+                     Play Game   
                    </button>
                 </Link>
             </div>        

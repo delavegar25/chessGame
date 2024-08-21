@@ -18,7 +18,7 @@ const SignUp = () => {
     const [showPassword, setShowPasssword] = useState(false);
     const [passwordStrength, setPasswordStrength] = useState('');
     const [passwordMatch, setPasswordMatch] = useState(null);
-
+    const [showAlert, setShowAlert] = useState(false);
 
     const navigate = useNavigate();
 
@@ -52,7 +52,7 @@ const SignUp = () => {
       e.preventDefault();
 
       if (!passwordMatch) {
-        alert('Invalid password');
+        setShowAlert(true);
         return;
       }
 
@@ -60,7 +60,7 @@ const SignUp = () => {
       {/* calling the API */}
       try {
         const response = await 
-        fetch('http://ypur-backend-url/api/signup',
+        fetch('http://your-backend-url/api/signup',
           {
             method: 'POST',
             headers: {
@@ -74,11 +74,11 @@ const SignUp = () => {
             navigate('/otp-verification');
           } else {
             const errorData = await response.json();
-            alert(`Error: ${errorData.message}`);
+            setShowAlert(true);
           }
       } catch (error) {
         console.error('Invalid account:', error);
-        alert('An error occurred, Please try again.')
+        setShowAlert(true);
       }
     };
 
@@ -104,8 +104,16 @@ const SignUp = () => {
          /> 
         </div>
 
-         <div className='bg-white p-4 rounded-md
-         shadow-md max-w-lg m-4 w-full mt-5'>
+
+        {showAlert && 
+        ( <div 
+          className="absolute  mr-4 p-2 bg-red-500 text-white text-sm rounded-lg mt-2 z-50 animate-slide-in">
+            Invalid credentials 
+            </div>
+        )}
+
+       <div className='bg-white p-4 rounded-lg
+         shadow-lg max-w-lg m-4 w-full mt-5 relative'>
 
            <h1 className='text-2xl font-bold mb-6 
            b-5

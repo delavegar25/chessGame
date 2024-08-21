@@ -2,9 +2,17 @@ import React, { useState, useEffect, useRef } from 'react';
 import SignInImage from '../assets/white chess.png';
 import ExitIcon from '../assets/cross redirect.png';
 import { Link, useNavigate } from 'react-router-dom';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
+
 
 const SignIn = () => {
+  const [showPassword, setShowPasssword] = useState(false);
+
   const navigate = useNavigate();
+
+  const togglePasswordVisibility = () => {
+    setShowPasssword(!showPassword);
+  }
 
   const handleExit = () => {
     navigate('/');
@@ -54,7 +62,7 @@ const SignIn = () => {
                  />
                 </div>
 
-                <div className='mb-4'>
+                <div className='mb-4 relative'>
                     <label className='block 
                     text-gray-700
                     text-sm
@@ -70,7 +78,7 @@ const SignIn = () => {
                         Forgot?
                        </Link>
                     </label>
-                    <input type="password"
+                    <input type={showPassword ? 'text': 'password'}
                            id = 'password'
                            className='w-full
                            px-3 py-2 border
@@ -80,6 +88,13 @@ const SignIn = () => {
                            focus:border-blue-500'
                            placeholder='Enter your password'
                      />
+                     <div className='absolute inset-y-0 right-0
+                     pr-3 top-6 flex items-center cursor-pointer'
+                     
+                     onClick={togglePasswordVisibility}
+                     >
+                      {showPassword ? <FaEyeSlash /> : <FaEye />}
+                     </div>
                   </div>
                 <button 
                 type='submit'
