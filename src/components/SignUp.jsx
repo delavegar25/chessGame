@@ -277,7 +277,7 @@ const SignUp = () => {
                   <div className='absolute inset-y-0 right-0 pr-3
                   flex items-center'> 
                   <button type='button'
-                    onClick={() => setShowConfirmPassword(!showPassword)}
+                    onClick={() => setShowConfirmPassword(!showConfirmPassword)}
                     className='focus:outline-none'
                     aria-label={showConfirmPassword ? 'Hide password' : 'Show password'}
                     >
