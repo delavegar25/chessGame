@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState } from 'react';
 import SignUpImage from '../assets/white chess.png';
 import { Link, useNavigate } from 'react-router-dom';
 import  ExitIcon from '../assets/cross redirect.png';
@@ -66,8 +66,7 @@ const SignUp = () => {
       });
     }
 
-    
-    
+        
     const handleSubmit = async (e) => {
       e.preventDefault();
 
@@ -222,13 +221,13 @@ const SignUp = () => {
                   </button>              
                 </div>
                </div>
-               <div className='mt-2 flex gap-4'>
+               <div className='mt-2'>
                 <div className={`flex items-center $ 
                   {passwordStrength.uppercase ? 'text-green-500': 'text-red-500' }`}>
                 <input type="radio"
                 checked={passwordStrength.uppercase} 
                 readOnly className='mr-2'/>
-                <span className='text-black'>Uppercase letter</span>
+                <span className='text-black text-sm'>Uppercase letter</span>
               </div>
               <div className={`flex items-center 
                 ${passwordStrength.lowercase ? 'text-green-500': 'text-red-500'}`}>
@@ -236,7 +235,7 @@ const SignUp = () => {
                 checked={passwordStrength.lowercase} 
                 readOnly className='mr-2'
                 />
-                <span className='text-black'>Lowercase letter</span>
+                <span className='text-black text-sm'>Lowercase letter</span>
               </div>
               <div className={`flex items-center 
                 ${passwordStrength.number ? 'text-green-500': 'text-red-500'}`}>
@@ -244,7 +243,7 @@ const SignUp = () => {
                   checked={passwordStrength.number}
                   readOnly className='mr-2' 
                   />
-                  <span className='text-black'>Number</span>
+                  <span className='text-black text-sm'>Number</span>
               </div>
               <div className={`flex items-center 
                 ${passwordStrength.special ? 'text-green-500' : 'text-red-500'}`}>
@@ -252,7 +251,7 @@ const SignUp = () => {
                   checked={passwordStrength.special}
                   readOnly className='mr-2'
                   />
-                <span className='text-black'>Special character</span>
+                <span className='text-black text-sm'>Special character</span>
               </div>
                </div>
               
