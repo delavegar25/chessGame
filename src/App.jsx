@@ -7,6 +7,7 @@ import SignIn from './components/SignIn'
 import SignUp from './components/SignUp'
 import ForgetPassword from './components/ForgetPassword'
 import CreateNewPassword from './components/CreateNewPassword'
+import Profile from './components/Profile'
 
 function App() {
   return (
@@ -19,7 +20,8 @@ function App() {
         <Route path='/signup' element={< SignUp/>}/><Route/>
         <Route path='/forget-password' element={< ForgetPassword/>}/><Route/>
         <Route path='/reset-password' element={< CreateNewPassword/>}/><Route/>
-      </Routes>
+        <Route path='/profile' element={< Profile/>}/><Route/>
+    </Routes>
     </Router>
   );
 };

@@ -28,7 +28,6 @@ const SignUp = () => {
     const [passwordMatch, setPasswordMatch] = useState(null);
     const [showAlert, setShowAlert] = useState(false);
 
-    const navigate = useNavigate();
 
     const handleChange = (e) => {
       const { name, value } = e.target;
@@ -101,10 +100,7 @@ const SignUp = () => {
       }
     };
 
-    const handleExit = () => {
-      navigate('/');
-    };
- 
+   
 
     return (
         <div className='bg-cover bg-center
@@ -118,12 +114,6 @@ const SignUp = () => {
        <div className='bg-gray-400 p-4 rounded-lg
          shadow-lg max-w-lg m-4 w-full mt-5 relative'>
          
-        <img src={ExitIcon}
-         alt="Exit" 
-         className='absolute top-2 right-2 
-         w-8 h-8 cursor-pointer'
-         onClick={handleExit}
-         /> 
         
         {showAlert && 
         ( <div 

@@ -7,16 +7,11 @@ import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 const SignIn = () => {
   const [showPassword, setShowPasssword] = useState(false);
-
-  const navigate = useNavigate();
-
+  
   const togglePasswordVisibility = () => {
     setShowPasssword(!showPassword);
   }
 
-  const handleExit = () => {
-    navigate('/');
-  }
 
    return (
     <div 
@@ -25,17 +20,7 @@ const SignIn = () => {
     items-center'
     style={{ backgroundImage: `url(${SignInImage})`}}>
         <div className='bg-gray-400 mt-40 p-8 rounded-lg shadow-lg w-96'> 
-          <div className='relative top-10
-            left-72'>
-            <img src={ExitIcon}
-            alt="Exit"
-            className='
-            w-8 h-8 cursor-pointer'
-            onClick={handleExit}
-            tabIndex='0' // Makes the Icon focusable with a keyboard
-            />
-            </div>
-            <h1 style={{ fontFamily: 'Roboto Flex sans-serif' }} 
+           <h1 style={{ fontFamily: 'Roboto Flex sans-serif' }} 
             id='signin-title' className='text-2xl font-bold 
             mb-4 text-center'>
               Chess User 

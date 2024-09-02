@@ -11,12 +11,6 @@ const ForgetPassword = () => {
         // API call
         console.log('Email submitted: email')
       };
-    
-      const navigate = useNavigate();
-
-      const handleExit = () => {
-        navigate('/');
-      };
   
 
     return (
@@ -32,13 +26,7 @@ const ForgetPassword = () => {
       rounded-lg 
       shadow-lg w-96'>
 
-        <img src={ExitIcon} 
-        alt="Exit" 
-        className='
-        w-8 h-8
-        cursor-pointer'
-        onClick={handleExit}
-        />
+       
 
             <h1 style={{ fontFamily: 'Roboto Flex sans-serif' }} 
             className='text-2xl font-bold 
