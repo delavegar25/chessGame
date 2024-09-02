@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import SignUpImage from '../assets/white chess.png';
-import { Link, useNavigate } from 'react-router-dom';
-import  ExitIcon from '../assets/cross redirect.png';
+import { Link } from 'react-router-dom';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 const SignUp = () => {

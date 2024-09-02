@@ -1,8 +1,5 @@
 import React, { useState } from 'react';
 import ForgetPasswordImage from '../assets/white chess.png';
-import ExitIcon from '../assets/cross redirect.png';
-import { useNavigate } from 'react-router-dom';
-
 
 const ForgetPassword = () => {
     const [email, setEmail] = useState('');

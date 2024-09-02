@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import SignInImage from '../assets/white chess.png';
-import ExitIcon from '../assets/cross redirect.png';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 
