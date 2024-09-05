@@ -8,7 +8,7 @@ module.exports = {
         '\\.(css|less|scss|sass)$':
         'identity-obj-proxy',
         '/^.+\.(jpg|jpeg|png|gif|svg)$':
-        'jest-transform-stub',
+        '<rootDir>/__mocks__/fileMock.js',
     },
    
     setupFileAfterEnv: ['@testing-library/jest-dom/extend-expect'],
