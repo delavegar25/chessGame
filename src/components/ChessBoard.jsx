@@ -21,7 +21,7 @@ const ChessBoard = () => {
                 );
             }
             board.push(<div key={i}
-                className='w-full max-w-md'>{row}</div>)
+                className='flex'>{row}</div>)
             }
 
     return (
@@ -32,7 +32,7 @@ const ChessBoard = () => {
             ChessBoardImage
         })`}}
         >
-          <div className='inline-block'>
+          <div className='w-full max-w-md'>
              {board}
           </div>
 
