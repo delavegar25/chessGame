@@ -8,6 +8,10 @@ import ForgetPassword from './components/ForgetPassword'
 import CreateNewPassword from './components/CreateNewPassword'
 import Profile from './components/Profile'
 import ChessBoard from './components/ChessBoard'
+import Advanced from './components/Advanced'
+import Beginner from './components/Beginner'
+import Intermediate from './components/Intermediate'
+
 
 function App() {
   return (
@@ -21,6 +25,9 @@ function App() {
         <Route path='/forget-password' element={< ForgetPassword/>}/><Route/>
         <Route path='/reset-password' element={< CreateNewPassword/>}/><Route/>
         <Route path='/profile' element={< Profile/>}/><Route/>
+        <Route path='/advanced' element={< Advanced/>}/><Route/>
+        <Route path='/beginner' element={< Beginner/>}/><Route/>
+        <Route path='/intermediate' element={< Intermediate/>}/><Route/>
     </Routes>
     </Router>
   );

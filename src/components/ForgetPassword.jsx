@@ -7,8 +7,7 @@ const ForgetPassword = () => {
         e.preventDefault();
         // API call
         console.log('Email submitted: email')
-      };
-  
+      };  
 
     return (
         <div
@@ -23,9 +22,8 @@ const ForgetPassword = () => {
       rounded-lg 
       shadow-lg w-96'>
 
-       
 
-            <h1 style={{ fontFamily: 'Roboto Flex sans-serif' }} 
+          <h1 style={{ fontFamily: 'Roboto Flex sans-serif' }} 
             className='text-2xl font-bold 
             mb-4 text-center'>
               Forget Password 
