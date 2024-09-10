@@ -60,7 +60,7 @@ const SignIn = () => {
                     htmlFor='password'
                     style={{ fontFamily: 'Roboto Flex sans-serif'}}>
                        Password 
-                       <Link to='/forget-password'
+                       <Link to='/single'
                        className='text-gray-500
                        font-normal
                        ml-52
