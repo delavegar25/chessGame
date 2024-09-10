@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom'; // for routing support in the test
-import SignIn from '../components/SignIn';
+import SignIn from '../SignIn';
 
 describe('SignIn Component', () => {
     // Test if the component renders correctly

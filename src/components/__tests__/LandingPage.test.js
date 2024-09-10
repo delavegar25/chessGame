@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { BrowserRouter  } from 'react-router-dom';
-import LandingPage from '../components/LandingPage';
+import LandingPage from '../LandingPage';
 
 test('renders Chess Hive heading', () => {
     render(
