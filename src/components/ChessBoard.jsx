@@ -15,7 +15,7 @@ const ChessBoard = () => {
                 row.push(
                     <div
                     key={`${i}-${j}`}
-                    className={`h-16 w-16 ${isDark ? "bg-gray-800" : "bg-gray-200"}`}
+                    className={`h-16 w-16 relative top-14 ${isDark ? "bg-gray-800" : "bg-gray-200"}`}
                     >
                     </div>
                 );
