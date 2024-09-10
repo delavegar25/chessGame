@@ -21,7 +21,7 @@ const ChessBoard = () => {
                 );
             }
             board.push(<div key={i}
-                className='flex'>{row}</div>)
+                className='w-full max-w-md'>{row}</div>)
             }
 
     return (
