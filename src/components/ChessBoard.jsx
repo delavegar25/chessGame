@@ -32,7 +32,7 @@ const ChessBoard = () => {
             ChessBoardImage
         })`}}
         >
-          <div className='w-full max-w-md'>
+          <div className='w-md max-w-lg'>
              {board}
           </div>
 
