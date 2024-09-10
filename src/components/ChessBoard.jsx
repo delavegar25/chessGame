@@ -1,21 +1,45 @@
-import React from 'react';
-import { Chess } from 'chess.js'
+import React, { useState } from 'react';
 
-const ChessBoard = ({ game, onMove }) => {
-    return(
-        <div className='grid grid-cols-8 gap-1'>
-            {game.board().flat().map((square, index) => (
-                <div
-                key={index}
-                className={`w-16 h-16 flex justify-center items-center ${
-                    (Math.floor(index / 8) + (index % 8)) % 2 === 0
-                    ? 'bg-gray-200'
-                    : 'bg-green-500'
-                }`}>
+import ChessBoardImage from '../assets/white chess.png';
 
-                </div>
-            ))}
+
+const ChessBoard = () => {
+        const board = [];
+        const rows = 8;
+        const cols = 8;
+
+        for(let i = 0; i < rows; i++) {
+            const row = [];
+            for (let j = 0; j < cols; j++) {
+                const isDark = (i + j) % 2 === 1;
+                row.push(
+                    <div
+                    key={`${i}-${j}`}
+                    className={`h-16 w-16 ${isDark ? "bg-gray-800" : "bg-gray-200"}`}
+                    >
+                    </div>
+                );
+            }
+            board.push(<div key={i}
+                className='flex'>{row}</div>)
+            }
+
+    return (
+        <div className='bg-cover bg-center
+        min-h-screen flex flex-col justify-start
+        items-center'
+        style={{ backgroundImage: `url(${
+            ChessBoardImage
+        })`}}
+        >
+          <div className='inline-block'>
+             {board}
+          </div>
 
         </div>
-    )
-}
+
+
+    );
+};
+
+export default ChessBoard;
