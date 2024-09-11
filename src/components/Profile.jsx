@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import ProfileImage from '../assets/white chess.png';
 
@@ -6,9 +6,8 @@ const Profile = () => {
     const navigate = useNavigate();
 
     const handleRedirect = (level) => {
-        navigate(`/game/${level}`);
+        navigate(`/chessboard/${level}`);
     };
-
 
     return (
         <div className='bg-cover bg-center
@@ -18,7 +17,7 @@ const Profile = () => {
             ProfileImage
         })`}}>
             <div style={{ fontFamily: 'Roboto Flex sans-serif' }} 
-            className='mt-20 p-8 bg-white
+            className='mt-20 p-8 bg-gray-700
             bg-opacity-80 rounded-lg shadow-lg'>
                 <h1 style= {{ fontFamily: 'Roboto Flex sans-serif' }} className='text-3xl font-bold
                 mb-8 text-center'>
@@ -28,9 +27,9 @@ const Profile = () => {
                 {/* Beginner Button */}
                 
                 <button onClick={() => 
-                    handleRedirect('beginner')
-                } className='w-full bg-green-500
-                text-white py-2 px-4 rounded-md hover:bg-green-600
+                    handleRedirect('/')
+                } className='w-full bg-gray-500
+                text-white py-2 px-4 rounded-md hover:bg-gray-600
                 mb-4 transition-colors' 
                 >
                    Beginner 
@@ -38,9 +37,9 @@ const Profile = () => {
 
                 {/* Intermediate Button */}
                 <button onClick={() => 
-                    handleRedirect('Intermediate')
-                } className='w-full bg-yellow-500
-                text-white py-2 px-4 rounded-md hover:bg-yellow-600 
+                    handleRedirect('/')
+                } className='w-full bg-gray-700
+                text-white py-2 px-4 rounded-md hover:bg-gray-800 
                 mb-4 transition-colors'
                 >
                     Intermediate 
@@ -48,10 +47,10 @@ const Profile = () => {
 
                  {/* Advanced Button*/}
                  <button onClick={() => 
-                    handleRedirect('advanced')
-                 } className='w-full bg-red-500
+                    handleRedirect('/')
+                 } className='w-full bg-gray-500
                  text-white py-2 px-4 rounded-md 
-                 hover:bg-red-600 transition-colors'
+                 hover:bg-gray-600 transition-colors'
                  >
                     Advanced 
                  </button>

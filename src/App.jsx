@@ -18,7 +18,7 @@ function App() {
     <Router>
       <Routes>
         <Route exact path='/' element={<LandingPage />}/><Route/>
-        <Route path='/single' element={<ChessBoard/>}/><Route/>
+        <Route path='/chessboard' element={<ChessBoard/>}/><Route/>
         <Route path='/human' element={< HumanVsHumanGame/>}/><Route/>        
         <Route path='/signin' element={< SignIn/>}/><Route/>
         <Route path='/signup' element={< SignUp/>}/><Route/>

@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 
 import ChessBoardImage from '../assets/white chess.png';
 
-
-
 const BeginnerBoard = () => {
         const board = [];
         const rows = 8;
