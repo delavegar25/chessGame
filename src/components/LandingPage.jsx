@@ -39,8 +39,8 @@ const LandingPage = () => {
             <h2 style={{ fontFamily: 'Roboto Flex sans-serif'}}
             className='text-white
             text-4xl font-bold animate-fade' aria-live='polite'>
-                "Welcome to Chess Hive <br />
-                Home of Chess Players" 
+                 
+                Home of Chess Players 
             </h2>
         </div>
         </div>

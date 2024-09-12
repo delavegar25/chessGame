@@ -48,9 +48,9 @@ const Profile = () => {
                  {/* Advanced Button*/}
                  <button onClick={() => 
                     handleRedirect('/')
-                 } className='w-full bg-gray-500
+                 } className='w-full bg-gray-800
                  text-white py-2 px-4 rounded-md 
-                 hover:bg-gray-600 transition-colors'
+                 hover:bg-gray-900 transition-colors'
                  >
                     Advanced 
                  </button>
