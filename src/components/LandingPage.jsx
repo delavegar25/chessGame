@@ -13,7 +13,7 @@ const LandingPage = () => {
             <div className='w-full p-4 bg-opacity-50 justify-between items-center'>   
             <h1 style= {{ fontFamily: 'Roboto Flex sans-serif' }}
             className='text-left text-xl font-bold text-black'>
-                CHESS HIVE  
+                CHESS HIVE   
                 </h1>
             <div style={{ fontFamily: 'Roboto Flex sans-serif'}} 
             className='absolute 
