@@ -38,8 +38,7 @@ const LandingPage = () => {
         justify-center'>
             <h2 style={{ fontFamily: 'Roboto Flex sans-serif'}}
             className='text-white
-            text-4xl font-bold animate-fade' aria-live='polite'>
-                 
+            text-4xl font-bold animate-fade text-center mb-12' aria-live='polite'>   
                 Home of Chess Players 
             </h2>
         </div>

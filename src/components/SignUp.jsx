@@ -32,7 +32,7 @@ const SignUp = () => {
       const { name, value } = e.target;
 
       setFormData({
-        ...formData,
+        ...formData, // used the spread operator to expand the elements of the array, spreading it into a new array.
         [name]: value,
       });
      

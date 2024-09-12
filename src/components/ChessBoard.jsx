@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 
 import ChessBoardImage from '../assets/white chess.png';
 
-
-
 const ChessBoard = () => {
         const board = [];
         const rows = 8;
@@ -25,6 +23,15 @@ const ChessBoard = () => {
                 className='flex'>{row}</div>)
             }
 
+            // Handlers for start and restart buttons
+            const handleStart = () => {
+                alert('Game Started')
+            };
+
+            const handleRestart = () => {
+                alert('Game Restarted')
+            };
+
     return (
         <div className='bg-cover bg-center
         min-h-screen flex flex-col justify-start
@@ -35,6 +42,27 @@ const ChessBoard = () => {
         >
           <div className='w-full max-w-lg'>
              {board}
+
+             {/* Start and Restart buttons */}
+
+             <div className='mt-20 p-6 space-x-4'>
+                <button onClick={handleStart}
+                className='bg-gray-800 hover:bg-gray-700
+                text-white font-bold py-2 px-4 rounded-md shadow-lg'
+                > 
+                    Start 
+                </button>
+
+                <button onClick={handleRestart}
+                className='bg-gray-500 hover:bg-gray-600
+                text-white font-bold py-2 px-4 rounded-md
+                shadow-lg'
+                >
+                   Restart 
+                </button>
+
+             </div>
+
           </div>
 
         </div>
