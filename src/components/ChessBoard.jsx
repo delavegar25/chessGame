@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-
+import React from 'react';
+import { motion } from 'framer-motion';
 import ChessBoardImage from '../assets/white chess.png';
 
 const ChessBoard = () => {
@@ -7,16 +7,31 @@ const ChessBoard = () => {
         const rows = 8;
         const cols = 8;
 
+        //Animations for squares 
+        const squareVariants = {
+            hidden: { opacity:0, scale: 0.8 },
+            visible: { opacity: 1, scale: 1 },
+        };
+
+
+        // Animating the squares of the board
         for(let i = 0; i < rows; i++) {
             const row = [];
             for (let j = 0; j < cols; j++) {
                 const isDark = (i + j) % 2 === 1;
                 row.push(
-                    <div
+                    <motion.div
                     key={`${i}-${j}`}
                     className={`h-14 w-14 relative top-20 ${isDark ? "bg-gray-800" : "bg-gray-200"}`}
+                    variants={squareVariants}
+                    initial='hidden'
+                    animate='visible'
+                    transition={{
+                        delay: (i *8 + j) * 0.05, // delay based on index for staggered animation                 
+                    duration:0.3    
+                    }}
                     >
-                    </div>
+                    </motion.div>
                 );
             }
             board.push(<div key={i}
@@ -40,33 +55,51 @@ const ChessBoard = () => {
             ChessBoardImage
         })`}}
         >
-          <div className='w-full max-w-lg'>
+
+            <motion.div 
+                className='w-full max-w-lg'
+                initial={{ opacity: 0 }}
+                animate= {{ opacity: 1 }}
+                transition={{ duration: 1.5 }}
+                // fading in the chessboard
+          >
              {board}
 
              {/* Start and Restart buttons */}
 
-             <div className='mt-20 p-6 space-x-4'>
-                <button onClick={handleStart}
+             <motion.div 
+              className='mt-20 p-6 space-x-4'
+                initial={{y: 50, opacity: 0}}
+                animate={{y: 0, opacity:1}}
+                transition={{ type: 'spring', 
+                    stiffness:100, duration: 1 
+                }}
+                >
+
+                <motion.button 
+                onClick={handleStart}
                 className='bg-gray-800 hover:bg-gray-700
                 text-white font-bold py-2 px-4 rounded-md shadow-lg'
+                whileHover={{ scale:1.1 }}// button hover animation
+                whileTap={{ scale: 0.95 }} // button press animation
                 > 
                     Start 
-                </button>
+                </motion.button>
 
-                <button onClick={handleRestart}
+                <motion.button 
+                onClick={handleRestart}
                 className='bg-gray-500 hover:bg-gray-600
                 text-white font-bold py-2 px-4 rounded-md
                 shadow-lg'
+                whileHover={{scale: 1.1}}
+                whileTap={{scale:0.95}}
                 >
                    Restart 
-                </button>
+                </motion.button>
 
-             </div>
-
-          </div>
-
-        </div>
-
+             </motion.div>
+        </motion.div>
+    </div>
 
     );
 };
