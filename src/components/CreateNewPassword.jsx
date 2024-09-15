@@ -13,7 +13,7 @@ const CreateNewPassword = () => {
 
     
     const handleSubmit = (e) => {
-        e.preventDefault();
+        e.preventDefault(); // prevents the page to refresh
         
         // Add password validation and api call here
           
