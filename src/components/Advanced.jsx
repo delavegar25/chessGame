@@ -30,8 +30,13 @@ const AdvancedBoard = () => {
         style={{ backgroundImage: `url(${
             ChessBoardImage
         })`}}
+        role='main'
+        aria-label='Chess game interface'
         >
-          <div className='w-full max-w-lg'>
+          <div className='w-full max-w-lg'
+          role='grid'
+          aria-label='Chessboard'
+          >
              {board}
           </div>
 
