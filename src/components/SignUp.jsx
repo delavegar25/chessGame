@@ -5,6 +5,7 @@ import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { supabase } from '../components/Supabase/supabaseClient';
 
 
+
 const SignUp = () => {
     const [formData, setFormData] = useState(
       {
