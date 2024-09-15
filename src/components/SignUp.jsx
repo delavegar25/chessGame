@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import SignUpImage from '../assets/white chess.png';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import { supabase } from '../supabaseClient';
+import SignUpImage from '../assets/white chess.png';
 
 const SignUp = () => {
     const [formData, setFormData] = useState(
@@ -76,20 +77,20 @@ const SignUp = () => {
 
       {/* calling the API */}
       try {
-        const response = await 
-        fetch('http://your-backend-url/api/signup',
-          {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(formData),
-          });
+        const { data, error } = await supabase.auth.signUp({
+          email: formData.email,
+          password: formData.password,
+        });
 
-          if (response.ok) {
-            alert('Account created! Please check your email for OTP.');
-            navigate('/otp-verification');
+        if (error){
+           console.error('Error creating account:', error.message)''
+           setShowAlert(true);
           } else {
+            alert('Account created! Please check your email for OTP');
+            navigate('/otp-verification')
+          } 
+
+     els {
             const errorData = await response.json();
             setShowAlert(true);
           }
