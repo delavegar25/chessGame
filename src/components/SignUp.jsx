@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
+import SignUpImage from '../assets/white chess.png';
 import { Link, useNavigate } from 'react-router-dom';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
-import { supabase } from '../supabaseClient';
-import SignUpImage from '../assets/white chess.png';
+import { supabase } from '../components/Supabase/supabaseClient';
+
 
 const SignUp = () => {
     const [formData, setFormData] = useState(
@@ -27,7 +28,7 @@ const SignUp = () => {
     );
     const [passwordMatch, setPasswordMatch] = useState(null);
     const [showAlert, setShowAlert] = useState(false);
-
+    const navigate = useNavigate();
 
     const handleChange = (e) => {
       const { name, value } = e.target;
@@ -82,24 +83,18 @@ const SignUp = () => {
           password: formData.password,
         });
 
-        if (error){
-           console.error('Error creating account:', error.message)''
-           setShowAlert(true);
-          } else {
-            alert('Account created! Please check your email for OTP');
-            navigate('/otp-verification')
-          } 
-
-     els {
-            const errorData = await response.json();
-            setShowAlert(true);
-          }
+        if(error) {
+          console.error('Error creating account:', error.message);
+          setShowAlert(true);
+        } else {
+          alert('Account created! Please check your email for OTP.')
+          navigate('/otp-verification');
+        }
       } catch (error) {
-        console.error('Invalid account:', error);
+        console.error('Error during signup:', error);
         setShowAlert(true);
       }
     };
-
    
     return (
         <div className='bg-cover bg-center
@@ -108,7 +103,6 @@ const SignUp = () => {
         justify-start items-center'
         style={{ backgroundImage: `url(${SignUpImage})`}} >
          
-        
 
        <div className='bg-gray-400 p-4 rounded-lg
          shadow-lg max-w-lg m-4 w-full mt-5 relative'>
