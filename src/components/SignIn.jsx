@@ -1,16 +1,38 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { supabase } from '../components/Supabase/supabaseClient';
 import SignInImage from '../assets/white chess.png';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 
 const SignIn = () => {
   const [showPassword, setShowPasssword] = useState(false);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState(null);
+  const navigate = useNavigate(); // To programmatically navigate the user
   
   const togglePasswordVisibility = () => {
     setShowPasssword(!showPassword);
   }
 
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    // use supaBase to sign in with email and password
+    const { data, error } = await supabase.auth.signInWithPassword({
+      email,
+      password 
+    });
+
+    if (error) {
+      setError(error.message);
+    } else {
+      alert('Successfully signed in');
+      navigate('/profile');
+    }
+  }
 
    return (
     <div 
@@ -25,7 +47,12 @@ const SignIn = () => {
               Chess User 
             </h1>
         
-            <form>
+            <form onSubmit={handleSubmit}>
+              {error && ( 
+                <div className='text-red-500 mb-4 text-center'>
+                  {error}
+                </div>
+              )}
                 <div style={{ fontFamily: 'Roboto Flex sans-serif' }} 
                 className='mb-4'>
                  <label
@@ -47,6 +74,7 @@ const SignIn = () => {
                         focus:border-blue-500'
                         placeholder='Enter your email'
                         aria-required='true' //Indicates this field is required 
+                        onChange={(e) => setEmail(e.target.value)}
                  />
                 </div>
 
@@ -80,6 +108,7 @@ const SignIn = () => {
                            focus:border-blue-500'
                            placeholder='Enter your password'
                            aria-required='true'
+                           onChange={(e) => setPassword(e.target.value)}
                      />
                      <button type= 'button'
                        className='absolute inset-y-0 right-0
