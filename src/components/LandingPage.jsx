@@ -32,7 +32,6 @@ const LandingPage = () => {
                 </Link>
             </div>        
         </div>
-
         <div 
         className='flex-grow flex items-center
         justify-center'>

@@ -100,7 +100,6 @@ const SignUp = () => {
     };
 
    
-
     return (
         <div className='bg-cover bg-center
         min-h-screen min-w-screen
