@@ -54,6 +54,8 @@ const ChessBoard = () => {
         style={{ backgroundImage: `url(${
             ChessBoardImage
         })`}}
+        role='main'
+        aria-label='Chess game interface'
         >
 
             <motion.div 
@@ -61,6 +63,8 @@ const ChessBoard = () => {
                 initial={{ opacity: 0 }}
                 animate= {{ opacity: 1 }}
                 transition={{ duration: 1.5 }}
+                role='grid'
+                aria-label='Chessboard'
                 // fading in the chessboard
           >
              {board}
@@ -82,6 +86,10 @@ const ChessBoard = () => {
                 text-white font-bold py-2 px-4 rounded-md shadow-lg'
                 whileHover={{ scale:1.1 }}// button hover animation
                 whileTap={{ scale: 0.95 }} // button press animation
+                role='button'
+                tabIndex='0'
+                aria-pressed='false'
+                aria-label='Start the game'
                 > 
                     Start 
                 </motion.button>
@@ -91,8 +99,12 @@ const ChessBoard = () => {
                 className='bg-gray-500 hover:bg-gray-600
                 text-white font-bold py-2 px-4 rounded-md
                 shadow-lg'
-                whileHover={{scale: 1.1}}
-                whileTap={{scale:0.95}}
+                whileHover={{scale: 1.1}} // button hover animation 
+                whileTap={{scale:0.95}}  // button press animation
+                role='button'
+                tabIndex='0'
+                aria-pressed='false'
+                aria-label='Restart the game'
                 >
                    Restart 
                 </motion.button>
