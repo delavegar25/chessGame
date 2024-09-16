@@ -7,14 +7,14 @@ import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 
 const SignIn = () => {
-  const [showPassword, setShowPasssword] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
   const navigate = useNavigate(); // To programmatically navigate the user
   
   const togglePasswordVisibility = () => {
-    setShowPasssword(!showPassword);
+    setShowPassword(!showPassword);
   }
 
 
@@ -71,7 +71,7 @@ const SignIn = () => {
                         px-3 py-2
                         border border-gray-300
                         rounded-md
-                        focus:outline=none
+                        focus:outline-none
                         focus:border-blue-500'
                         placeholder='Enter your email'
                         aria-required='true' //Indicates this field is required 
