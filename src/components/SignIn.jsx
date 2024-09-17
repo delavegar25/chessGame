@@ -6,14 +6,14 @@ import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 
 
-const SignIn = () => {
+const SignIn = () => { // parent component
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
   const navigate = useNavigate(); // To programmatically navigate the user
   
-  const togglePasswordVisibility = () => {
+  const togglePasswordVisibility = () => { // child component
     setShowPassword(!showPassword);
   }
 
