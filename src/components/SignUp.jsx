@@ -79,7 +79,8 @@ const SignUp = () => {
 
       {/* calling the API */}
       try {
-        const { data, error } = await supabase.auth.signUp({
+        const { data, error } = await 
+        supabase.auth.signUp({
           email: formData.email,
           password: formData.password,
         });

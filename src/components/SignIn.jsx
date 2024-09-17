@@ -22,7 +22,8 @@ const SignIn = () => { // parent component
     e.preventDefault();
 
     // use supaBase to sign in with email and password
-    const { data, error } = await supabase.auth.signInWithPassword({
+    const { data, error } = await 
+    supabase.auth.signInWithPassword({
       email,
       password 
     });

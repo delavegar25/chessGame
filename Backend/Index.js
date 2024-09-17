@@ -49,7 +49,7 @@ try {
      }
 
      if(existingUserError) {
-        return res.status(400).json({ message: 'Invalid User '})
+        throw existingUserError;
      }
 
      // hash the password
@@ -76,6 +76,3 @@ try {
 })
 
 
-app.listen(port, () => {
-    console.log(`Server running on port ${port}`);
-})
