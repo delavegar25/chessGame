@@ -20,9 +20,9 @@ const SignIn = () => { // parent component
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // use supaBase to sign in with email and password
-    const { data, error } = await 
-    supabase.auth.signInWithPassword({
+    
+    const { data, error } = 
+    ({
       email,
       password 
     });

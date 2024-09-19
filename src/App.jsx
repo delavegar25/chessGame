@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import LandingPage from './components/LandingPage'
 import HumanVsHumanGame from './components/HumanVsHumanGame'
@@ -14,16 +14,6 @@ import Intermediate from './components/Intermediate'
 
 
 function App() {
-
-  // perform side effects
-  useEffect(() => {
-    const checkSession = async () => {
-      const { data: { session } } = await supabase.auth.getSession();
-      console.log('User session:', session);
-    };
-    checkSession();
-  }, []);
-
 
   return (
     <Router>
