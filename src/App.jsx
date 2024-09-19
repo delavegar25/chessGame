@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import { supabase } from './components/Supabase/supabaseClient'
 import LandingPage from './components/LandingPage'
 import HumanVsHumanGame from './components/HumanVsHumanGame'
 import SignIn from './components/SignIn'
@@ -16,6 +15,7 @@ import Intermediate from './components/Intermediate'
 
 function App() {
 
+  // perform side effects
   useEffect(() => {
     const checkSession = async () => {
       const { data: { session } } = await supabase.auth.getSession();
@@ -23,6 +23,7 @@ function App() {
     };
     checkSession();
   }, []);
+
 
   return (
     <Router>

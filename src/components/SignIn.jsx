@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { supabase } from '../components/Supabase/supabaseClient';
 import SignInImage from '../assets/white chess.png';
 import { Link, useNavigate } from 'react-router-dom';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';

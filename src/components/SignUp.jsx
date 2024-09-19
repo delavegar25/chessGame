@@ -2,9 +2,6 @@ import React, { useState } from 'react';
 import SignUpImage from '../assets/white chess.png';
 import { Link, useNavigate } from 'react-router-dom';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
-import { supabase } from '../components/Supabase/supabaseClient';
-
-
 
 const SignUp = () => {
     const [formData, setFormData] = useState(
@@ -34,7 +31,7 @@ const SignUp = () => {
     const handleChange = (e) => {
       const { name, value } = e.target;
 
-      setFormData({
+      setFormData({ // update the current state using the spread operator to expand the values in the array 
         ...formData, // used the spread operator to expand the elements of the array, spreading it into a new array.
         [name]: value,
       });
@@ -71,8 +68,8 @@ const SignUp = () => {
     const handleSubmit = async (e) => {
       e.preventDefault();
 
-      if (!passwordMatch) {
-        setShowAlert(true);
+      if (!passwordMatch) { // if the current passwordMatch is not null return true.
+        setShowAlert(true); // update the showAlert state to true 
         return;
       }
 
