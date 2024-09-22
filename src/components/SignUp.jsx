@@ -76,19 +76,27 @@ const SignUp = () => {
 
       {/* calling the API */}
       try {
-        const { data, error } = 
-        ({
+       const response = await fetch('http://localhost:5173/signup', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json'},
+        body: JSON.stringify({
           email: formData.email,
           password: formData.password,
-        });
+          username: formData.username,
+          name: formData.name    
+        })
+       });
 
-        if(error) {
-          console.error('Error creating account:', error.message);
-          setShowAlert(true);
-        } else {
-          alert('Account created! Please check your email for OTP.')
-          navigate('/otp-verification');
-        }
+      const data = await response.json();
+
+      if(response.ok) {
+        alert('Account created! Please check your email for OTP.');
+        navigate('./otp-verification')
+      }
+      else {
+        console.error('Error creating account:', data.message);
+        setShowAlert(true);
+      }
       } catch (error) {
         console.error('Error during signup:', error);
         setShowAlert(true);

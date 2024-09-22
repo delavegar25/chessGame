@@ -18,21 +18,30 @@ const SignIn = () => { // parent component
 
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    e.preventDefault(); // prevent the page from refreshing
 
-    
-    const { data, error } = 
-    ({
-      email,
-      password 
-    });
+    try  {
+      const response = await fetch('http://localhost:5173/signin', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json'},
+        body: JSON.stringify({
+          email,
+          password 
+        })
+      });
 
-    if (error) {
-      setError(error.message);
-    } else {
-      alert('Successfully signed in');
-      navigate('/profile');
+      const data = await response.json();
+
+      if(response.ok) {
+        alert('Successfully signed in');
+        navigate('http://localhost:5173/profile');
+      } else {
+        setError(data.message);
+      }
+    } catch(error) {
+       setError('An error occurred during sign-in')
     }
+   
   }
 
    return (
