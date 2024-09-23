@@ -34,7 +34,7 @@ const SignIn = () => { // parent component
 
       if(response.ok) {
         alert('Successfully signed in');
-        navigate('http://localhost:5173/profile');
+        navigate('/profile');
       } else {
         setError(data.message);
       }
