@@ -278,12 +278,12 @@ const SignUp = () => {
                 {passwordMatch === false && (
                   <p
                   className='text-sm text-red-500'>
-                  Invalid password 
+                   Passwords do not match  
                   </p>
                 )}
-                {passwordMatch === true && ( <p 
+                {showMatchAlert && passwordMatch === true && ( <p 
                   className='text-sm text-green-500'>
-                    Password match
+                    Passwords match
                   </p>
                 )}
                 </div>
