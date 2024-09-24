@@ -11,6 +11,7 @@ import ChessBoard from './components/ChessBoard'
 import Advanced from './components/Advanced'
 import Beginner from './components/Beginner'
 import Intermediate from './components/Intermediate'
+import OTPVerification from './components/OTPVerification'
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
         <Route path='/advanced' element={< Advanced/>}/><Route/>
         <Route path='/beginner' element={< Beginner/>}/><Route/>
         <Route path='/intermediate' element={< Intermediate/>}/><Route/>
+        <Route path='/verify-otp' element={< OTPVerification/>}/><Route/>
     </Routes>
     </Router>
   );
