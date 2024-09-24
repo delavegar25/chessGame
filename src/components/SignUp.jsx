@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import SignUpImage from '../assets/white chess.png';
 import { Link, useNavigate } from 'react-router-dom';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
@@ -18,15 +18,24 @@ const SignUp = () => {
     const [showConfirmPassword, setShowConfirmPassword] = useState(false);
     const [passwordStrength, setPasswordStrength] = useState(
       {
-        uppercase: false,
-        lowercase: false,
-        number: false,
-        special: false,
+        score: 0, // 0 to 4 score
       }
     );
     const [passwordMatch, setPasswordMatch] = useState(null);
     const [showAlert, setShowAlert] = useState(false);
+    const [showMatchAlert, setShowMatchAlert] = useState(false); // for the 5 second match alert
+    
     const navigate = useNavigate();
+    
+    useEffect(() => {
+      if(passwordMatch) {
+        setShowMatchAlert(true); // show the match alert
+      
+      const timer = setTimeout(() => setShowMatchAlert(false), 5000); // hide after 5 seconds
+
+      return () => clearTimeout(timer); // cleanup timeout if component unmounts or password changes
+      }
+    }, [passwordMatch]);
 
     const handleChange = (e) => {
       const { name, value } = e.target;
@@ -51,18 +60,14 @@ const SignUp = () => {
     };
 
     const validatePasswordStrength = (password) => { 
-      const uppercase = /[A-Z]/.test(password);
-      const lowercase = /[a-z]/.test(password);
-      const number = /\d/.test(password);
-      const special = /[$&@?]/.test(password);
+      let score = 0;
+      if (/[A-Z]/.test(password)) score += 1;
+      if(/[a-z]/.test(password)) score += 1;
+      if(/\d/.test(password)) score += 1;
+      if(/[$&@?]/.test(password)) score += 1;
 
-      setPasswordStrength({
-        uppercase,
-        lowercase,
-        number,
-        special,
-      });
-    }
+      setPasswordStrength({ score });
+    };
 
         
     const handleSubmit = async (e) => {
@@ -102,6 +107,24 @@ const SignUp = () => {
         setShowAlert(true);
       }
     };
+
+    const getPasswordStrengthLabel = () => {
+      switch (passwordStrength.score) {
+        case 4: return 'Strong';
+        case 3: return 'Medium';
+        case 2: return 'Weak';
+        case 1: return 'Very weak';
+      }
+    };
+
+    const getPasswordStrengthColor = () => {
+      switch(passwordStrength.score) {
+        case 4: return 'bg-green-500';
+        case 3: return 'bg-yellow-500';
+        case 2: return 'bg-orange-500';
+          default: return 'bg-red-500';
+      }
+    }
    
     return (
         <div className='bg-cover bg-center
@@ -198,7 +221,7 @@ const SignUp = () => {
                 value={formData.password}
                 onChange={handleChange}
                 className={`mt-1 px-4 py-2 border rounded-lg w-full focus:outline-none focus:ring-2 
-                  ${passwordStrength.uppercase && passwordStrength.lowercase && passwordStrength.number && passwordStrength.special ? 'focus:ring-green-500' : 'focus:ring-red-500'}`}               
+                  `}               
                 placeholder='Password'
                 />
                 <div className='absolute inset-y-0 right-0
@@ -212,37 +235,14 @@ const SignUp = () => {
                 </div>
                </div>
                <div className='mt-2'>
-                <div className={`flex items-center $ 
-                  {passwordStrength.uppercase ? 'text-green-500': 'text-red-500' }`}>
-                <input type="radio"
-                checked={passwordStrength.uppercase} 
-                readOnly className='mr-2'/>
-                <span className='text-black text-sm'>Uppercase letter</span>
-              </div>
-              <div className={`flex items-center 
-                ${passwordStrength.lowercase ? 'text-green-500': 'text-red-500'}`}>
-                <input type="radio"
-                checked={passwordStrength.lowercase} 
-                readOnly className='mr-2'
-                />
-                <span className='text-black text-sm'>Lowercase letter</span>
-              </div>
-              <div className={`flex items-center 
-                ${passwordStrength.number ? 'text-green-500': 'text-red-500'}`}>
-                  <input type="radio"
-                  checked={passwordStrength.number}
-                  readOnly className='mr-2' 
-                  />
-                  <span className='text-black text-sm'>Number</span>
-              </div>
-              <div className={`flex items-center 
-                ${passwordStrength.special ? 'text-green-500' : 'text-red-500'}`}>
-                  <input type="radio" 
-                  checked={passwordStrength.special}
-                  readOnly className='mr-2'
-                  />
-                <span className='text-black text-sm'>Special character</span>
-              </div>
+                  <div className={`h-2 w-full rounded-full ${getPasswordStrengthColor()}`}
+                  style={{ width: `$
+                    {passwordStrength.score * 25}%`}} 
+                  >
+                    </div>
+                    <p className='text-sm text-gray-600 mt-2'>
+                      {getPasswordStrengthLabel()}
+                    </p>
                </div>
               
                 <div className='mb-6'>
