@@ -96,7 +96,7 @@ const SignUp = () => {
 
       if(response.ok) {
         alert('Account created! Please check your email for OTP.');
-        navigate('./otp-verification')
+        navigate('./verify-otp')
       }
       else {
         console.error('Error creating account:', data.message);
