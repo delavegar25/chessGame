@@ -41,7 +41,7 @@ const SignUp = () => {
       const { name, value } = e.target;
 
       setFormData({ // update the current state using the spread operator to expand the values in the array 
-        ...formData, // used the spread operator to expand the elements of the array, spreading it into a new array.
+        ...formData, // used the spread syntax to expand the elements of the array, spreading it into a new array.
         [name]: value,
       });
      
@@ -235,7 +235,7 @@ const SignUp = () => {
                 </div>
                </div>
                <div className='mt-2'>
-                  <div className={`h-2 w-full rounded-full ${getPasswordStrengthColor()}`}
+                  <div className={`h-2 w-40 rounded-full ${getPasswordStrengthColor()}`}
                   style={{ width: `$
                     {passwordStrength.score * 25}%`}} 
                   >
