@@ -28,7 +28,7 @@ const OTPVerification = () => {
                 setError(data.message);
             }
         } catch (error) {
-            setError('An error occurred during OTP verification');
+            setError('Invalid OTP');
         }
     }
 
