@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import OTPVerificationImage from '../assets/white chess.png'
 
 
-
 const OTPVerification = () => {
     const [otp, setOtp] = useState('');
     const [error, setError] = useState(null);
@@ -84,7 +83,6 @@ const OTPVerification = () => {
         </div>
             </div>
     )
-
 }
 
 export default OTPVerification;
