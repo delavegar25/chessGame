@@ -40,7 +40,8 @@ const SignUp = () => {
     const handleChange = (e) => {
       const { name, value } = e.target;
 
-      setFormData({ // update the current state using the spread syntax to expand the values in the array 
+      setFormData({ // update the current state using the spread syntax to expand the values in the array
+        // creating a new object in a setter function. 
         ...formData, 
         [name]: value,
       });
