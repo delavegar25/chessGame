@@ -20,7 +20,7 @@ describe('Profile component', () => {
     test('renders the profile page and buttons', () => {
         // Render the component
         render(
-            <BroswerRouter>
+            <BrowserRouter>
             <Profile />
             </BrowserRouter>
         );
