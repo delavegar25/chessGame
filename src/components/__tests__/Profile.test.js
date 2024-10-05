@@ -4,6 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import Profile from '../components/Profile';
 import '@testing-library/jest-dom/extend-expect'; 
 
+
 // Mock the 'useNavigate' hook from react-router-dom
 jest.mock('react-router-dom', () => ({
     useNavigate: jest.fn(),
