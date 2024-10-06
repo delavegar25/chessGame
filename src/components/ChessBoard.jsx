@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import ChessBoardImage from '../assets/white chess.png';
 
 const ChessBoard = ({ username }) => {
-    const [chess] = useState(new Chess()); // initialize chess game
+    const [chess] = useState(new chess()); // initialize chess game
     const [games, setGames] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
